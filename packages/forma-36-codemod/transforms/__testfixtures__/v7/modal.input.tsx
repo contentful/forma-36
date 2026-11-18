@@ -121,3 +121,41 @@ export function NamedHeader({ isShown, onClose }) {
     </Modal>
   );
 }
+
+export function RenderFunctionWithTitle({ isShown, onClose }) {
+  return (
+    <Modal isShown={isShown} onClose={onClose} title="Title">
+      {() => (
+        <>
+          <Modal.Content>Body</Modal.Content>
+        </>
+      )}
+    </Modal>
+  );
+}
+
+export function ComputedHeaderProps({ isShown, onClose, k, v }) {
+  return (
+    <Modal
+      isShown={isShown}
+      onClose={onClose}
+      title="Title"
+      modalHeaderProps={{ [k]: v }}
+    >
+      <p>Body</p>
+    </Modal>
+  );
+}
+
+export function RenderFunctionHeaderAndTitle({ isShown, onClose }) {
+  return (
+    <Modal isShown={isShown} onClose={onClose} title="Outer">
+      {() => (
+        <>
+          <Modal.Header title="Inner" />
+          <Modal.Content>Body</Modal.Content>
+        </>
+      )}
+    </Modal>
+  );
+}
