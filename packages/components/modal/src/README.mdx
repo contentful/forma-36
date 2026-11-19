@@ -21,6 +21,9 @@ import { Modal } from '@contentful/f36-components';
 import { Modal } from '@contentful/f36-modal';
 ```
 
+> **⚠️ Deprecated props**: `title`, `subtitle` and `modalHeaderProps` on `Modal`, and `onClose` on `Modal.Header`, are deprecated and will be removed in the next major version (v7).
+> Use the `header` and `controls` slots instead. See the [migration guide](https://github.com/contentful/forma-36/blob/main/packages/components/modal/MIGRATION.md).
+
 ## Content and slots
 
 Everything you pass as `children` is rendered inside the `Modal.Content` compound component, which provides the padding and scrolling of the modal body. Use `modalContentProps` to customize this wrapper.
