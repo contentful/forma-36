@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Button, ModalConfirm, Text } from '@contentful/f36-components';
+import { Button, ConfirmationModal, Text } from '@contentful/f36-components';
 
-export default function ModalConfirmExample() {
+export default function ConfirmationModalExample() {
   const [isShown, setShown] = useState(false);
   return (
     <>
       <Button variant="secondary" onClick={() => setShown(true)}>
         Publish entry
       </Button>
-      <ModalConfirm
+      <ConfirmationModal
         intent="positive"
         isShown={isShown}
         onCancel={() => {
@@ -19,7 +19,7 @@ export default function ModalConfirmExample() {
         }}
       >
         <Text>Do you really want to publish this entry?</Text>
-      </ModalConfirm>
+      </ConfirmationModal>
     </>
   );
 }

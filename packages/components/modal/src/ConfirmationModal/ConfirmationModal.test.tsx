@@ -5,7 +5,7 @@ import { screen } from '@testing-library/dom';
 import userEvent, { type UserEvent } from '@testing-library/user-event';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
-import { ModalConfirm } from './ModalConfirm';
+import { ConfirmationModal, ModalConfirm } from './ConfirmationModal';
 
 let user: UserEvent;
 beforeEach(() => {
@@ -35,9 +35,9 @@ vi.mock('react-modal', () => ({
 
 it('has no a11y issues', async () => {
   const { baseElement } = render(
-    <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>
-      ModalConfirm
-    </ModalConfirm>,
+    <ConfirmationModal isShown onConfirm={() => {}} onCancel={() => {}}>
+      ConfirmationModal
+    </ConfirmationModal>,
   );
   await expectNoA11yViolations(baseElement);
 });
@@ -46,9 +46,9 @@ it('renders a `x` icon to close/dismiss the modal', async () => {
   const closeButtonSpy = vi.fn();
 
   render(
-    <ModalConfirm isShown onConfirm={() => {}} onCancel={closeButtonSpy}>
-      ModalConfirm
-    </ModalConfirm>,
+    <ConfirmationModal isShown onConfirm={() => {}} onCancel={closeButtonSpy}>
+      ConfirmationModal
+    </ConfirmationModal>,
   );
 
   const closeButton = screen.getByRole('button', { name: /Close/i });
@@ -59,14 +59,14 @@ it('renders a `x` icon to close/dismiss the modal', async () => {
 
 it('names the dialog by its title', () => {
   render(
-    <ModalConfirm
+    <ConfirmationModal
       isShown
       onConfirm={() => {}}
       onCancel={() => {}}
       title="Delete"
     >
-      ModalConfirm
-    </ModalConfirm>,
+      ConfirmationModal
+    </ConfirmationModal>,
   );
 
   expect(screen.getByRole('dialog', { name: 'Delete' })).toBeTruthy();
@@ -75,9 +75,14 @@ it('names the dialog by its title', () => {
 it('does not link aria-labelledby to an empty title', () => {
   render(
     // @ts-expect-error aria.label is required for an empty title; testing the runtime fallback
-    <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}} title="">
-      ModalConfirm
-    </ModalConfirm>,
+    <ConfirmationModal
+      isShown
+      onConfirm={() => {}}
+      onCancel={() => {}}
+      title=""
+    >
+      ConfirmationModal
+    </ConfirmationModal>,
   );
 
   expect(screen.getByRole('dialog').hasAttribute('aria-labelledby')).toBe(
@@ -87,16 +92,38 @@ it('does not link aria-labelledby to an empty title', () => {
 
 it('names the dialog with aria.label when the title is empty', () => {
   render(
-    <ModalConfirm
+    <ConfirmationModal
       isShown
       onConfirm={() => {}}
       onCancel={() => {}}
       title=""
       aria={{ label: 'Confirm deletion' }}
     >
-      ModalConfirm
-    </ModalConfirm>,
+      ConfirmationModal
+    </ConfirmationModal>,
   );
 
   expect(screen.getByRole('dialog', { name: 'Confirm deletion' })).toBeTruthy();
+});
+
+it('keeps the deprecated ModalConfirm alias working and warns once', () => {
+  vi.stubEnv('NODE_ENV', 'development');
+  const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+  const modal = (
+    <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>
+      ModalConfirm
+    </ModalConfirm>
+  );
+  const { rerender } = render(modal);
+  rerender(modal);
+
+  expect(screen.getByRole('dialog', { name: 'Are you sure?' })).toBeTruthy();
+  expect(warn).toHaveBeenCalledTimes(1);
+  expect(String(warn.mock.calls[0][0])).toContain(
+    '`ModalConfirm` is deprecated',
+  );
+
+  warn.mockRestore();
+  vi.unstubAllEnvs();
 });
