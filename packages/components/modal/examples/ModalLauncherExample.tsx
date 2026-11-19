@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  ModalConfirm,
+  ConfirmationModal,
   ModalLauncher,
   Text,
   Button,
@@ -12,7 +12,7 @@ export default function ModalLauncherExample() {
 
   const onClickHandler = () => {
     ModalLauncher.open<string>(({ isShown, onClose }) => (
-      <ModalConfirm
+      <ConfirmationModal
         isShown={isShown}
         onCancel={() => {
           onClose('canceled');
@@ -22,7 +22,7 @@ export default function ModalLauncherExample() {
         }}
       >
         <Text>Do you want to confirm your action?</Text>
-      </ModalConfirm>
+      </ConfirmationModal>
     )).then((text) => {
       setResult(text);
     });
