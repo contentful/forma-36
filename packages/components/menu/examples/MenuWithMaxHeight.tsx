@@ -1,17 +1,15 @@
 import React from 'react';
-import { Menu, IconButton } from '@contentful/f36-components';
+import { Menu } from '@contentful/f36-components';
 import { ListIcon } from '@contentful/f36-icons';
 
 export default function MenuWithMaxHeight() {
   return (
     <Menu>
-      <Menu.Trigger>
-        <IconButton
-          variant="secondary"
-          icon={<ListIcon />}
-          aria-label="toggle menu"
-        />
-      </Menu.Trigger>
+      <Menu.TriggerButton
+        variant="secondary"
+        icon={<ListIcon />}
+        aria-label="toggle menu"
+      />
       <Menu.List style={{ maxHeight: '200px' }}>
         <Menu.Item>Item 1</Menu.Item>
         <Menu.Item>Item 2</Menu.Item>

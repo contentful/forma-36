@@ -15,7 +15,7 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { Flex, IconButton, Menu } from '@contentful/f36-components';
+import { Flex, Menu } from '@contentful/f36-components';
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -332,14 +332,12 @@ export default function FolderListHandleReplacesIconExample() {
         <span className={styles.label}>{folder.name}</span>
         <span data-row-action>
           <Menu onOpen={onMenuOpen} onClose={onMenuClose}>
-            <Menu.Trigger>
-              <IconButton
-                variant="transparent"
-                size="small"
-                icon={<DotsThreeIcon />}
-                aria-label={`${folder.name} folder actions`}
-              />
-            </Menu.Trigger>
+            <Menu.TriggerButton
+              variant="transparent"
+              size="small"
+              icon={<DotsThreeIcon />}
+              aria-label={`${folder.name} folder actions`}
+            />
             <Menu.List>
               <Menu.Item onClick={onRename}>
                 <PencilSimpleIcon size="tiny" />

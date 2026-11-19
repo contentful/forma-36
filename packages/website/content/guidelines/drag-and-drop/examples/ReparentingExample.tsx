@@ -790,15 +790,13 @@ export default function ReparentingExample() {
           <span className={styles.label}>{folder.name}</span>
           <span data-row-action>
             <Menu onOpen={onMenuOpen} onClose={onMenuClose}>
-              <Menu.Trigger>
-                <IconButton
-                  variant="transparent"
-                  size="small"
-                  icon={<DotsThreeIcon />}
-                  aria-label={`${folder.name} folder actions`}
-                  data-menu-trigger-id={folder.id}
-                />
-              </Menu.Trigger>
+              <Menu.TriggerButton
+                variant="transparent"
+                size="small"
+                icon={<DotsThreeIcon />}
+                aria-label={`${folder.name} folder actions`}
+                data-menu-trigger-id={folder.id}
+              />
               <Menu.List>
                 <Menu.Item onClick={onRename}>
                   <PencilSimpleIcon size="tiny" />
