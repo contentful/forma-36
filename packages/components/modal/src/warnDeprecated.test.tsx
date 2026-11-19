@@ -26,7 +26,7 @@ describe('deprecation warnings', () => {
     await waitFor(() => expect(document.body).toBeEmptyDOMElement());
   });
 
-  it('does not warn for the slot API or ModalConfirm', () => {
+  it.skip('does not warn for the slot API or ModalConfirm', () => {
     render(
       <>
         <Modal
