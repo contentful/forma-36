@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ModalDisplay, Text } from '@contentful/f36-components';
+import { Button, DisplayModal, Text } from '@contentful/f36-components';
 import { CheckCircleIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
@@ -9,7 +9,7 @@ export default function ModalDisplayExample() {
   return (
     <>
       <Button onClick={() => setShown(true)}>Show display modal</Button>
-      <ModalDisplay
+      <DisplayModal
         illustration={
           <CheckCircleIcon
             color={tokens.green500}
@@ -30,7 +30,7 @@ export default function ModalDisplayExample() {
           Content types define the structure of your entries, such as a blog
           post or a product.
         </Text>
-      </ModalDisplay>
+      </DisplayModal>
     </>
   );
 }
