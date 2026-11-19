@@ -2,7 +2,7 @@ import { action } from 'storybook/actions';
 import type { StoryFn as Story } from '@storybook/react-vite';
 import React from 'react';
 
-import { Button, IconButton } from '@contentful/f36-button';
+import { IconButton } from '@contentful/f36-button';
 import { Flex } from '@contentful/f36-core';
 import { CaretDownIcon, PlusIcon } from '@contentful/f36-icons';
 import { Menu } from '@contentful/f36-menu';
@@ -112,11 +112,12 @@ const InputTools: React.FC = () => {
         />
       </Tooltip>
       <Menu>
-        <Menu.Trigger>
-          <Button variant="secondary" size="small" endIcon={<CaretDownIcon />}>
-            {selectedModel}
-          </Button>
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          title={selectedModel}
+          size="small"
+          endIcon={<CaretDownIcon />}
+        />
         <Menu.List>
           {models.map((model) => (
             <Menu.Item

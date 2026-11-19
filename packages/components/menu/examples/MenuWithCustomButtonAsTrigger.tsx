@@ -1,11 +1,11 @@
 import React from 'react';
-import { Menu, Button } from '@contentful/f36-components';
+import { Menu } from '@contentful/f36-components';
 
-export default function MenuWithButtonAsTrigger() {
+export default function MenuWithCustomButtonAsTrigger() {
   return (
     <Menu>
       <Menu.Trigger>
-        <Button>toggle menu</Button>
+        <button type="button">toggle menu</button>
       </Menu.Trigger>
       <Menu.List>
         <Menu.Item>Create an entry</Menu.Item>
