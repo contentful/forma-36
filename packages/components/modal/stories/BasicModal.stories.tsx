@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '@contentful/f36-button';
-import type { ModalBasicProps } from '../src/ModalBasic/ModalBasic';
-import { ModalBasic } from '../src';
+import type { BasicModalProps } from '../src/BasicModal/BasicModal';
+import { BasicModal } from '../src';
 
 export default {
-  title: 'Components/Modal/ModalBasic',
-  component: ModalBasic,
+  title: 'Components/Modal/BasicModal',
+  component: BasicModal,
   parameters: {
-    propTypes: [ModalBasic['__docgenInfo']],
+    propTypes: [BasicModal['__docgenInfo']],
   },
   decorators: [
     (Story) => (
@@ -38,13 +38,13 @@ export default {
   },
 } as Meta;
 
-export const Basic: StoryObj<ModalBasicProps> = (props) => {
+export const Basic: StoryObj<BasicModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
 
   return (
     <div>
       <Button onClick={() => setShown(true)}>Open modal</Button>
-      <ModalBasic
+      <BasicModal
         {...props}
         modalContentProps={{
           className: 'additional-modal-content-class',
@@ -53,7 +53,7 @@ export const Basic: StoryObj<ModalBasicProps> = (props) => {
         onClose={() => setShown(false)}
       >
         Modal content. It is centered by default.
-      </ModalBasic>
+      </BasicModal>
     </div>
   );
 };

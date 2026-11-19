@@ -64,12 +64,12 @@ export interface ModalProps extends CommonProps {
   topOffset?: number | string;
   /**
    * Modal title that is used in header
-   * @deprecated Use the `header` slot (`header={<Modal.Header title="…" />}`) or `ModalBasic` instead.
+   * @deprecated Use the `header` slot (`header={<Modal.Header title="…" />}`) or `BasicModal` instead.
    */
   title?: string;
   /**
    * Modal subtitle that is used in header
-   * @deprecated Use the `header` slot (`header={<Modal.Header subtitle="…" />}`) or `ModalBasic` instead.
+   * @deprecated Use the `header` slot (`header={<Modal.Header subtitle="…" />}`) or `BasicModal` instead.
    */
   subtitle?: string;
   /**
@@ -112,7 +112,7 @@ export interface ModalProps extends CommonProps {
 
   /**
    * Optional props to override ModalHeader behaviour
-   * @deprecated Use the `header` slot and pass the props to `Modal.Header` directly, or `headerProps` on `ModalBasic`.
+   * @deprecated Use the `header` slot and pass the props to `Modal.Header` directly, or `headerProps` on `BasicModal`.
    */
   modalHeaderProps?: Partial<ModalHeaderProps>;
 
