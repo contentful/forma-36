@@ -169,18 +169,14 @@ export const ModalConfirm = <T extends string = string>({
     >
       {() => {
         return (
-          <React.Fragment>
-            <Modal.Header
-              title={title}
-              {...modalHeaderProps}
-              onClose={onCancel}
-            />
+          <>
+            <Modal.Header title={title} {...modalHeaderProps} />
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>
             <Modal.Controls {...modalControlsProps}>
               {cancelButton}
               {confirmButton}
             </Modal.Controls>
-          </React.Fragment>
+          </>
         );
       }}
     </Modal>
