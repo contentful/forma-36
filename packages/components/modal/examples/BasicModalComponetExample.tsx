@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalBasic, Text } from '@contentful/f36-components';
+import { Button, Modal, BasicModal, Text } from '@contentful/f36-components';
 
-export default function ModalBasicComponentExample() {
+export default function BasicModalComponentExample() {
   const [isShown, setShown] = useState(false);
 
   return (
     <>
       <Button onClick={() => setShown(true)}>Add to release</Button>
-      <ModalBasic
+      <BasicModal
         title="Add to release"
         subtitle="Spring campaign"
         isShown={isShown}
@@ -32,7 +32,7 @@ export default function ModalBasicComponentExample() {
         }
       >
         <Text>This entry will be published together with the release.</Text>
-      </ModalBasic>
+      </BasicModal>
     </>
   );
 }
