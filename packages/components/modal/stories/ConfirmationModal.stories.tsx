@@ -3,18 +3,18 @@ import type { StoryObj, Meta } from '@storybook/react-vite';
 import { action } from 'storybook/actions';
 import { Paragraph, Text } from '@contentful/f36-typography';
 import {
-  ModalConfirm,
-  type ModalConfirmProps,
-} from '../src/ModalConfirm/ModalConfirm';
+  ConfirmationModal,
+  type ConfirmationModalProps,
+} from '../src/ConfirmationModal/ConfirmationModal';
 import { Button } from '@contentful/f36-button';
 import { TextInput } from '@contentful/f36-forms';
 
 export default {
-  title: 'Components/Modal/ModalConfirm',
-  component: ModalConfirm,
+  title: 'Components/Modal/ConfirmationModal',
+  component: ConfirmationModal,
   parameters: {
     layout: 'padded',
-    propTypes: [ModalConfirm['__docgenInfo']],
+    propTypes: [ConfirmationModal['__docgenInfo']],
   },
   decorators: [
     (Story) => (
@@ -52,14 +52,14 @@ export default {
   },
 } as Meta;
 
-function SimpleDemo(props: ModalConfirmProps) {
+function SimpleDemo(props: ConfirmationModalProps) {
   const [isShown, setShown] = useState(true);
   return (
     <div>
       <Button variant="negative" onClick={() => setShown(true)}>
         Delete something
       </Button>
-      <ModalConfirm
+      <ConfirmationModal
         {...props}
         isShown={isShown}
         onCancel={() => {
@@ -72,18 +72,18 @@ function SimpleDemo(props: ModalConfirmProps) {
         }}
       >
         <Text>You are about to delete SOMETHING. Think twice!</Text>
-      </ModalConfirm>
+      </ConfirmationModal>
     </div>
   );
 }
 
-export const Basic: StoryObj<ModalConfirmProps> = {
+export const Basic: StoryObj<ConfirmationModalProps> = {
   render: (props) => {
     return <SimpleDemo {...props} />;
   },
 };
 
-export function ComplexStory(props: ModalConfirmProps) {
+export function ComplexStory(props: ConfirmationModalProps) {
   const [isShown, setShown] = useState(true);
   const [isLoading, setLoading] = useState(false);
   const [repeat, setRepeat] = useState('');
@@ -93,7 +93,7 @@ export function ComplexStory(props: ModalConfirmProps) {
       <Button variant="negative" onClick={() => setShown(true)}>
         Delete something
       </Button>
-      <ModalConfirm
+      <ConfirmationModal
         {...props}
         isShown={isShown}
         isConfirmDisabled={repeat !== 'unlock'}
@@ -119,7 +119,7 @@ export function ComplexStory(props: ModalConfirmProps) {
           value={repeat}
           onChange={(e) => setRepeat((e.target as HTMLInputElement).value)}
         />
-      </ModalConfirm>
+      </ConfirmationModal>
     </div>
   );
 }
