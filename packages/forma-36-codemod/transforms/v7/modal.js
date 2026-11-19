@@ -1,4 +1,16 @@
-const { warningMessage } = require('../../utils');
+const {
+  attributesToObject,
+  createComponent,
+  getComponentLocalName,
+  getNonBlankChildren,
+  getProperty,
+  getRenderFunction,
+  hasProperty,
+  isFragment,
+  objectToAttributes,
+  renameProperties,
+  warningMessage,
+} = require('../../utils');
 const { getImport } = require('../../utils/config');
 
 // v7 Modal codemod, migrates to the `header` / `controls` slots:
@@ -13,21 +25,12 @@ const PARTS = ['Header', 'Content', 'Controls'];
 module.exports = function updateToV7Modal(file, api) {
   const j = api.jscodeshift;
   const root = j(file.source);
-  const importNames = new Set([
-    getImport('f36-components'),
-    getImport('f36-modal'),
-  ]);
-
-  const imports = root
-    .find(j.ImportDeclaration)
-    .filter((p) => importNames.has(p.node.source.value));
-  const localName = (name) => {
-    let local = '';
-    imports
-      .find(j.ImportSpecifier, { imported: { name } })
-      .forEach((p) => (local = p.node.local.name));
-    return local;
-  };
+  const localName = (componentName) =>
+    [getImport('f36-components'), getImport('f36-modal')]
+      .map((importName) =>
+        getComponentLocalName(j, file.source, { importName, componentName }),
+      )
+      .find(Boolean) ?? '';
 
   const warn = (message, node) =>
     warningMessage(`[Modal] ${message}`, { file, value: node });
@@ -37,7 +40,7 @@ module.exports = function updateToV7Modal(file, api) {
     const name = localName(`Modal${part}`);
     if (!name) return;
     root
-      .find(j.JSXOpeningElement, { name: { type: 'JSXIdentifier', name } })
+      .findJSXElements(name)
       .forEach((p) =>
         warn(`Use <Modal.${part}> instead of <${name}> to migrate.`, p.node),
       );
@@ -47,94 +50,40 @@ module.exports = function updateToV7Modal(file, api) {
   if (!modalName) return root.toSource();
 
   const isPart = (node, part) =>
-    node?.type === 'JSXElement' &&
-    node.openingElement.name.type === 'JSXMemberExpression' &&
-    node.openingElement.name.object.name === modalName &&
-    node.openingElement.name.property.name === part;
+    j.match(node, {
+      type: 'JSXElement',
+      openingElement: {
+        name: {
+          type: 'JSXMemberExpression',
+          object: { name: modalName },
+          property: { name: part },
+        },
+      },
+    });
 
-  const isFragment = (node) =>
-    node?.type === 'JSXFragment' ||
-    (node?.type === 'JSXElement' &&
-      node.openingElement.attributes.length === 0 &&
-      ['Fragment', 'React.Fragment'].includes(
-        j(node.openingElement.name).toSource(),
-      ));
-
-  const isBlank = (node) => node.type === 'JSXText' && !node.value.trim();
-  const getAttr = (opening, name) =>
-    opening.attributes.find(
-      (a) => a.type === 'JSXAttribute' && a.name.name === name,
-    );
+  const getAttr = (opening, propertyName) =>
+    getProperty(opening.attributes, { propertyName });
+  const hasAttr = (opening, propertyName) =>
+    hasProperty(opening.attributes, { propertyName });
   const removeAttrs = (opening, names) => {
-    opening.attributes = opening.attributes.filter(
-      (a) => !(a.type === 'JSXAttribute' && names.includes(a.name.name)),
-    );
-  };
-  const exprSource = (attr) =>
-    attr?.value?.type === 'JSXExpressionContainer'
-      ? j(attr.value.expression).toSource().replace(/\s/g, '')
-      : undefined;
-  const slot = (name, element) =>
-    j.jsxAttribute(j.jsxIdentifier(name), j.jsxExpressionContainer(element));
-
-  // { a: 'x', b } -> a="x" b={b}; anything else -> {...expr}
-  const objectToAttrs = (expression) => {
-    if (
-      expression.type !== 'ObjectExpression' ||
-      expression.properties.some((p) => p.computed || p.type.includes('Method'))
-    ) {
-      return [j.jsxSpreadAttribute(expression)];
-    }
-    return expression.properties.map((prop) => {
-      if (prop.type === 'SpreadElement' || prop.type === 'SpreadProperty') {
-        return j.jsxSpreadAttribute(prop.argument);
-      }
-      const value = prop.value;
-      return j.jsxAttribute(
-        j.jsxIdentifier(prop.key.name ?? prop.key.value),
-        value.type === 'StringLiteral' || value.type === 'Literal'
-          ? j.stringLiteral(value.value)
-          : j.jsxExpressionContainer(value),
-      );
+    opening.attributes = renameProperties(opening.attributes, {
+      renameMap: Object.fromEntries(names.map((name) => [name, null])),
     });
   };
-
-  // a="x" b={b} -> { a: 'x', b: b }
-  const attrsToObject = (attributes) =>
-    j.objectExpression(
-      attributes.map((a) => {
-        if (a.type === 'JSXSpreadAttribute') return j.spreadElement(a.argument);
-        const key = /^[A-Za-z_$][\w$]*$/.test(a.name.name)
-          ? j.identifier(a.name.name)
-          : j.stringLiteral(a.name.name);
-        let value = j.booleanLiteral(true);
-        if (a.value?.type === 'JSXExpressionContainer')
-          value = a.value.expression;
-        else if (a.value) value = j.stringLiteral(a.value.value);
-        return j.objectProperty(key, value);
-      }),
-    );
-
-  const getRenderFunction = (element) => {
-    const children = element.children.filter((c) => !isBlank(c));
-    const fn = children[0]?.expression;
-    return children.length === 1 &&
-      ['ArrowFunctionExpression', 'FunctionExpression'].includes(fn?.type)
-      ? fn
-      : undefined;
-  };
+  const slot = (name, element) =>
+    j.jsxAttribute(j.jsxIdentifier(name), j.jsxExpressionContainer(element));
 
   const TITLE_PROPS = ['title', 'subtitle', 'modalHeaderProps'];
 
   // 1. title / subtitle / modalHeaderProps -> header slot
   const migrateTitleProps = (element) => {
     const opening = element.openingElement;
-    if (!TITLE_PROPS.some((name) => getAttr(opening, name))) return;
+    if (!TITLE_PROPS.some((name) => hasAttr(opening, name))) return;
     // with a render function the default header is not rendered, `title` is only read via the params
     if (getRenderFunction(element)) return;
 
     const title = getAttr(opening, 'title');
-    if (getAttr(opening, 'header')) {
+    if (hasAttr(opening, 'header')) {
       return warn('Has `header` and `title`; remove `title`.', opening);
     }
     if (!title) {
@@ -154,23 +103,19 @@ module.exports = function updateToV7Modal(file, api) {
     const headerProps = getAttr(opening, 'modalHeaderProps');
     const headerAttrs = [title, subtitle].filter(Boolean);
     if (headerProps?.value?.type === 'JSXExpressionContainer') {
-      headerAttrs.push(...objectToAttrs(headerProps.value.expression));
+      headerAttrs.push(...objectToAttributes(j, headerProps.value.expression));
     }
 
     removeAttrs(opening, TITLE_PROPS);
     opening.attributes.push(
       slot(
         'header',
-        j.jsxElement(
-          j.jsxOpeningElement(
-            j.jsxMemberExpression(
-              j.jsxIdentifier(modalName),
-              j.jsxIdentifier('Header'),
-            ),
-            headerAttrs,
-            true,
-          ),
-        ),
+        createComponent({
+          componentName: `${modalName}.Header`,
+          props: headerAttrs,
+          isSelfClosing: true,
+          j,
+        }),
       ),
     );
   };
@@ -181,7 +126,7 @@ module.exports = function updateToV7Modal(file, api) {
     const fn = getRenderFunction(element);
     if (!fn) return;
 
-    if (getAttr(opening, 'header') || getAttr(opening, 'controls')) {
+    if (hasAttr(opening, 'header') || hasAttr(opening, 'controls')) {
       return warn('Render function next to slots; migrate manually.', opening);
     }
     if (fn.params.length > 0) {
@@ -201,14 +146,14 @@ module.exports = function updateToV7Modal(file, api) {
       }
       body = body.body[0].argument;
     }
-    if (!isFragment(body)) {
+    if (!isFragment(j, body)) {
       return warn(
         'Render function does not return a fragment (e.g. a <form> wrapper); migrate manually.',
         fn,
       );
     }
 
-    const parts = body.children.filter((c) => !isBlank(c));
+    const parts = getNonBlankChildren(body);
     const kinds = parts.map((c) => PARTS.find((part) => isPart(c, part)));
     // only Header?, Content, Controls? in visual order
     if (!/^(Header,)?Content(,Controls)?$/.test(kinds.join())) {
@@ -221,7 +166,7 @@ module.exports = function updateToV7Modal(file, api) {
     const byKind = Object.fromEntries(kinds.map((k, i) => [k, parts[i]]));
     const content = byKind.Content;
     const contentAttrs = content.openingElement.attributes;
-    if (contentAttrs.length && getAttr(opening, 'modalContentProps')) {
+    if (contentAttrs.length && hasAttr(opening, 'modalContentProps')) {
       return warn(
         'Modal.Content props and `modalContentProps` both set; migrate manually.',
         fn,
@@ -233,7 +178,7 @@ module.exports = function updateToV7Modal(file, api) {
       opening.attributes.push(slot('controls', byKind.Controls));
     if (contentAttrs.length) {
       opening.attributes.push(
-        slot('modalContentProps', attrsToObject(contentAttrs)),
+        slot('modalContentProps', attributesToObject(j, contentAttrs)),
       );
     }
     element.children = content.children;
@@ -241,9 +186,7 @@ module.exports = function updateToV7Modal(file, api) {
 
   // 3. drop Modal.Header onClose when it equals the Modal onClose
   const migrateHeaderOnClose = (path) => {
-    const modalOnClose = exprSource(
-      getAttr(path.node.openingElement, 'onClose'),
-    );
+    const modalOnClose = getAttr(path.node.openingElement, 'onClose')?.value;
     j(path)
       .find(j.JSXElement)
       .filter((p) => isPart(p.node, 'Header'))
@@ -262,7 +205,10 @@ module.exports = function updateToV7Modal(file, api) {
         const header = p.node.openingElement;
         const onClose = getAttr(header, 'onClose');
         if (!onClose) return;
-        if (modalOnClose && exprSource(onClose) === modalOnClose) {
+        if (
+          modalOnClose?.type === 'JSXExpressionContainer' &&
+          j.types.astNodesAreEquivalent(onClose.value, modalOnClose)
+        ) {
           removeAttrs(header, ['onClose']);
         } else {
           warn(
@@ -273,20 +219,12 @@ module.exports = function updateToV7Modal(file, api) {
       });
   };
 
-  const isModal = (node) =>
-    node?.type === 'JSXElement' &&
-    node.openingElement.name.type === 'JSXIdentifier' &&
-    node.openingElement.name.name === modalName;
-
-  root
-    .find(j.JSXElement)
-    .filter((p) => isModal(p.node))
-    .forEach((path) => {
-      migrateRenderFunction(path.node);
-      // after the render function: a migrated one no longer blocks title -> header
-      migrateTitleProps(path.node);
-      migrateHeaderOnClose(path);
-    });
+  root.findJSXElements(modalName).forEach((path) => {
+    migrateRenderFunction(path.node);
+    // after the render function: a migrated one no longer blocks title -> header
+    migrateTitleProps(path.node);
+    migrateHeaderOnClose(path);
+  });
 
   return root.toSource();
 };

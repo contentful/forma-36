@@ -138,3 +138,12 @@ export function RenderFunctionHeaderAndTitle({ isShown, onClose }) {
       header={<Modal.Header title="Inner" />}>Body</Modal>
   );
 }
+
+export function HeaderOnCloseDiffersOnlyInString({ isShown, log }) {
+  return (
+    <Modal isShown={isShown} onClose={() => log('ab')}>
+      <Modal.Header title="Title" onClose={() => log('a b')} />
+      <Modal.Content>Body</Modal.Content>
+    </Modal>
+  );
+}
