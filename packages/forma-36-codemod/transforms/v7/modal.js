@@ -1,5 +1,7 @@
 const {
   attributesToObject,
+  changeComponentName,
+  changeIdentifier,
   createComponent,
   getComponentLocalName,
   getNonBlankChildren,
@@ -18,19 +20,45 @@ const { getImport } = require('../../utils/config');
 // 2. {() => <><Modal.Header/><Modal.Content/><Modal.Controls/></>}
 //                                               -> header / controls slots, Content children as Modal children
 // 3. Modal.Header onClose identical to Modal onClose -> removed (Header reads it from the Modal)
+// Also renames ModalConfirm / ModalConfirmProps to ConfirmationModal / ConfirmationModalProps.
 // Everything that is not provably safe is left untouched and reported as a warning.
 
 const PARTS = ['Header', 'Content', 'Controls'];
+const RENAMES = [
+  ['ModalConfirm', 'ConfirmationModal'],
+  ['ModalConfirmProps', 'ConfirmationModalProps'],
+];
 
 module.exports = function updateToV7Modal(file, api) {
   const j = api.jscodeshift;
-  const root = j(file.source);
-  const localName = (componentName) =>
-    [getImport('f36-components'), getImport('f36-modal')]
+  const importNames = [getImport('f36-components'), getImport('f36-modal')];
+  const getLocalName = (source, componentName) =>
+    importNames
       .map((importName) =>
-        getComponentLocalName(j, file.source, { importName, componentName }),
+        getComponentLocalName(j, source, { importName, componentName }),
       )
       .find(Boolean) ?? '';
+
+  // 0. ModalConfirm / ModalConfirmProps -> ConfirmationModal / ConfirmationModalProps
+  // changeComponentName renames the JSX tags first, keeping their whitespace,
+  // then changeIdentifier renames the import and plain references (an alias keeps its local name).
+  const source = RENAMES.reduce(
+    (src, [from, to]) =>
+      getLocalName(src, from)
+        ? changeIdentifier(
+            j,
+            changeComponentName(j, src, {
+              componentName: from,
+              outputComponentName: to,
+            }),
+            { from, to },
+          )
+        : src,
+    file.source,
+  );
+
+  const root = j(source);
+  const localName = (componentName) => getLocalName(source, componentName);
 
   const warn = (message, node) =>
     warningMessage(`[Modal] ${message}`, { file, value: node });
