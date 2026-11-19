@@ -283,6 +283,7 @@ export const WithDisplayHeader: StoryFn<ModalProps> = () => {
             title="Successs"
           />
         }
+        modalContentProps={{ style: { textAlign: 'center' } }}
         controls={
           <Modal.Controls justifyContent="center">
             <Button
@@ -295,7 +296,7 @@ export const WithDisplayHeader: StoryFn<ModalProps> = () => {
           </Modal.Controls>
         }
       >
-        Your action was successfull
+        Your action was successful
       </Modal>
     </div>
   );
