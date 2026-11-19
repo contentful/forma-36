@@ -17,5 +17,5 @@ export type {
   ModalLauncherComponentRendererProps,
   ModalLauncherOpenOptions,
 } from './ModalLauncher/ModalLauncher';
-export { ModalDisplay } from './ModalDisplay/ModalDisplay';
-export type { ModalDisplayProps } from './ModalDisplay/ModalDisplay';
+export { DisplayModal } from './DisplayModal/DisplayModal';
+export type { DisplayModalProps } from './DisplayModal/DisplayModal';

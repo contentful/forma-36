@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import type { StoryObj, Meta } from '@storybook/react-vite';
 import { action } from 'storybook/actions';
 import {
-  ModalDisplay,
-  type ModalDisplayProps,
-} from '../src/ModalDisplay/ModalDisplay';
+  DisplayModal,
+  type DisplayModalProps,
+} from '../src/DisplayModal/DisplayModal';
 import { Button } from '@contentful/f36-button';
 
 import illustration from './informative-ct-modal.svg';
 import { TextLink } from '@contentful/f36-text-link';
 
 export default {
-  title: 'Components/Modal/ModalDisplay',
-  component: ModalDisplay,
+  title: 'Components/Modal/DisplayModal',
+  component: DisplayModal,
   parameters: {
-    propTypes: [ModalDisplay['__docgenInfo']],
+    propTypes: [DisplayModal['__docgenInfo']],
   },
   decorators: [
     (Story) => (
@@ -28,14 +28,14 @@ export default {
   },
 } as Meta;
 
-function SimpleDemo(props: ModalDisplayProps) {
+function SimpleDemo(props: DisplayModalProps) {
   const [isShown, setShown] = useState(true);
   return (
     <div>
       <Button variant="negative" onClick={() => setShown(true)}>
         Show Display Modal
       </Button>
-      <ModalDisplay
+      <DisplayModal
         illustration={
           <img src={illustration} alt="Content type visualisation" />
         }
@@ -55,12 +55,12 @@ function SimpleDemo(props: ModalDisplayProps) {
       >
         This is some explanation text&nbsp;
         <TextLink> you can read more here ...</TextLink>
-      </ModalDisplay>
+      </DisplayModal>
     </div>
   );
 }
 
-export const Basic: StoryObj<ModalDisplayProps> = {
+export const Basic: StoryObj<DisplayModalProps> = {
   render: (props) => {
     return <SimpleDemo {...props} />;
   },

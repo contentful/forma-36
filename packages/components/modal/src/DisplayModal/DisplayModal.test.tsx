@@ -3,7 +3,7 @@ import React from 'react';
 import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
-import { ModalDisplay, type ModalDisplayProps } from './ModalDisplay';
+import { DisplayModal, type DisplayModalProps } from './DisplayModal';
 
 // react-modal removes its portal node asynchronously (closeTimeoutMS) after unmount.
 afterEach(async () => {
@@ -11,9 +11,9 @@ afterEach(async () => {
   await waitFor(() => expect(document.body).toBeEmptyDOMElement());
 });
 
-const renderDisplay = (props: Partial<ModalDisplayProps> = {}) =>
+const renderDisplay = (props: Partial<DisplayModalProps> = {}) =>
   render(
-    <ModalDisplay
+    <DisplayModal
       isShown
       onClose={() => {}}
       title="Display title"
@@ -23,7 +23,7 @@ const renderDisplay = (props: Partial<ModalDisplayProps> = {}) =>
       {...props}
     >
       Body content
-    </ModalDisplay>,
+    </DisplayModal>,
   );
 
 describe('accessibility', () => {
