@@ -21,7 +21,7 @@ The `title`, `subtitle` and `modalHeaderProps` props of `Modal`, and the `onClos
 - new `controls` slot, takes `Modal.Controls`, rendered below the content
 - new `closeIconLabel` prop on `Modal`, sets the accessible label of the header close button
 - `Modal.Header` now shows the close button whenever the `Modal` has an `onClose`, even if you don't pass `onClose` to the header
-- new components `BasicModal`, `ModalDisplay` and `Modal.DisplayHeader`
+- new components `BasicModal`, `DisplayModal` and `Modal.DisplayHeader`
 
 ---
 
@@ -94,7 +94,7 @@ For each warning:
 - **`onClose` on `Modal.Header` differs from the `onClose` of the `Modal`.** Move the logic into the `onClose` of the `Modal` and remove it from the header.
 - **Named `ModalHeader`, `ModalContent` or `ModalControls`.** Replace them with `Modal.Header`, `Modal.Content` and `Modal.Controls`, then run the codemod again.
 
-If a modal only has a title, consider `BasicModal`. For onboarding or informative moments, consider `ModalDisplay`.
+If a modal only has a title, consider `BasicModal`. For onboarding or informative moments, consider `DisplayModal`.
 
 ---
 
