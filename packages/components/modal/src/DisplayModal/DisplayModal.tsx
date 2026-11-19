@@ -6,9 +6,9 @@ import { type ModalDisplayHeaderProps } from '../ModalDisplayHeader/ModalDisplay
 import type { ModalContentProps } from '../ModalContent/ModalContent';
 import type { ModalControlsProps } from '../ModalControls/ModalControls';
 import { cx } from '@emotion/css';
-import { styles } from './ModalDisplay.styles';
+import { styles } from './DisplayModal.styles';
 
-export type ModalDisplayProps = ModalProps & {
+export type DisplayModalProps = ModalProps & {
   title: string;
   subtitle?: string;
   illustration?: ModalDisplayHeaderProps['illustration'];
@@ -19,7 +19,7 @@ export type ModalDisplayProps = ModalProps & {
   children?: React.ReactNode;
 };
 
-export const ModalDisplay = ({
+export const DisplayModal = ({
   illustration,
   title,
   subtitle,
@@ -30,7 +30,7 @@ export const ModalDisplay = ({
   controls,
   children,
   ...otherProps
-}: ModalDisplayProps) => {
+}: DisplayModalProps) => {
   return (
     <Modal onClose={onClose} {...otherProps}>
       {() => {
@@ -58,4 +58,4 @@ export const ModalDisplay = ({
   );
 };
 
-ModalDisplay.displayName = 'ModalDisplay';
+DisplayModal.displayName = 'DisplayModal';

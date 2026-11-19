@@ -6,7 +6,7 @@ import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 import { ModalDisplayHeader } from './ModalDisplayHeader';
 
 // Context logic (ids, onClose, closeIconLabel) is owned by useModalHeader.test;
-// name/description linking inside a Modal by ModalDisplay.test.
+// name/description linking inside a Modal by DisplayModal.test.
 
 describe('markup', () => {
   it('renders the title as h2 and the subtitle as p inside an hgroup', () => {
