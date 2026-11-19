@@ -19,6 +19,7 @@ import {
   type ModalControlsProps,
 } from './ModalControls/ModalControls';
 import { getModalStyles } from './Modal.styles';
+import { warnDeprecated } from './warnDeprecated';
 import type { ModalSizeType, ModalPositionType } from './types';
 
 const ModalSizesMapper: { [key in ModalSizeType]: string } = {
@@ -162,6 +163,15 @@ export const Modal = ({
   ...otherProps
 }: ExpandProps<ModalProps>) => {
   const { header, controls } = otherProps;
+  const headerSlotHint =
+    'Use the `header` slot with `<Modal.Header />` instead.';
+  if (otherProps.title !== undefined) warnDeprecated('title', headerSlotHint);
+  if (otherProps.subtitle !== undefined) {
+    warnDeprecated('subtitle', headerSlotHint);
+  }
+  if (otherProps.modalHeaderProps !== undefined) {
+    warnDeprecated('modalHeaderProps', headerSlotHint);
+  }
   if (process.env.NODE_ENV !== 'production') {
     if (
       header &&
