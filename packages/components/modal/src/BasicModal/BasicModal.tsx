@@ -3,7 +3,7 @@ import React from 'react';
 import { Modal, type ModalProps } from '../Modal';
 import { ModalHeader, type ModalHeaderProps } from '../ModalHeader/ModalHeader';
 
-export interface ModalBasicProps extends Omit<
+export interface BasicModalProps extends Omit<
   ModalProps,
   'header' | 'title' | 'subtitle' | 'modalHeaderProps'
 > {
@@ -21,16 +21,16 @@ export interface ModalBasicProps extends Omit<
   headerProps?: Partial<Omit<ModalHeaderProps, 'title' | 'subtitle'>>;
 }
 
-export const ModalBasic = ({
+export const BasicModal = ({
   title,
   subtitle,
   headerProps,
   ...otherProps
-}: ModalBasicProps) => (
+}: BasicModalProps) => (
   <Modal
     {...otherProps}
     header={<ModalHeader title={title} subtitle={subtitle} {...headerProps} />}
   />
 );
 
-ModalBasic.displayName = 'ModalBasic';
+BasicModal.displayName = 'BasicModal';

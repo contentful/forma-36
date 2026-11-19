@@ -9,7 +9,7 @@ import {
 } from '@testing-library/react';
 import { expectNoA11yViolations } from '@/scripts/test/expectNoA11yViolations';
 
-import { Modal, ModalBasic } from '../';
+import { Modal, BasicModal } from '../';
 
 afterEach(async () => {
   cleanup();
@@ -19,7 +19,7 @@ afterEach(async () => {
 it('renders header, content and controls without a11y issues', async () => {
   const onClose = vi.fn();
   const { baseElement } = render(
-    <ModalBasic
+    <BasicModal
       isShown
       onClose={onClose}
       title="Basic title"
@@ -31,7 +31,7 @@ it('renders header, content and controls without a11y issues', async () => {
       }
     >
       Content
-    </ModalBasic>,
+    </BasicModal>,
   );
   const dialog = screen.getByRole('dialog');
   expect(dialog).toHaveAttribute(
