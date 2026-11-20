@@ -1,17 +1,15 @@
 import React from 'react';
-import { Menu, IconButton } from '@contentful/f36-components';
+import { Menu } from '@contentful/f36-components';
 import { ListIcon } from '@contentful/f36-icons';
 
 export default function MenuWithStickyHeaderFooter() {
   return (
     <Menu>
-      <Menu.Trigger>
-        <IconButton
-          variant="secondary"
-          icon={<ListIcon />}
-          aria-label="toggle menu"
-        />
-      </Menu.Trigger>
+      <Menu.TriggerButton
+        variant="secondary"
+        icon={<ListIcon />}
+        aria-label="toggle menu"
+      />
       <Menu.List style={{ maxHeight: '300px' }}>
         <Menu.ListHeader>
           <Menu.Item>Item header</Menu.Item>

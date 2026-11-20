@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, IconButton } from '@contentful/f36-components';
+import { Menu } from '@contentful/f36-components';
 import { ListIcon } from '@contentful/f36-icons';
 
 export default function ControlledMenu() {
@@ -10,13 +10,11 @@ export default function ControlledMenu() {
       onOpen={() => setIsOpen(true)}
       onClose={() => setIsOpen(false)}
     >
-      <Menu.Trigger>
-        <IconButton
-          variant="secondary"
-          icon={<ListIcon />}
-          aria-label="toggle menu"
-        />
-      </Menu.Trigger>
+      <Menu.TriggerButton
+        variant="secondary"
+        icon={<ListIcon />}
+        aria-label="toggle menu"
+      />
       <Menu.List>
         <Menu.Item>Create an entry</Menu.Item>
         <Menu.Item>Remove an entry</Menu.Item>

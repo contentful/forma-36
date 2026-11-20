@@ -8,6 +8,7 @@ import { MenuDivider } from './MenuDivider/MenuDivider';
 import { MenuSectionTitle } from './MenuSectionTitle/MenuSectionTitle';
 import { Submenu } from './Submenu/Submenu';
 import { SubmenuTrigger } from './SubmenuTrigger/SubmenuTrigger';
+import { MenuTriggerButton } from './MenuTriggerButton/MenuTriggerButton';
 
 type CompoundMenu = typeof OriginalMenu & {
   List: typeof MenuList;
@@ -15,6 +16,7 @@ type CompoundMenu = typeof OriginalMenu & {
   ListFooter: typeof MenuListFooter;
   Item: typeof MenuItem;
   Trigger: typeof MenuTrigger;
+  TriggerButton: typeof MenuTriggerButton;
   Divider: typeof MenuDivider;
   SectionTitle: typeof MenuSectionTitle;
   Submenu: typeof Submenu;
@@ -27,6 +29,7 @@ Menu.ListHeader = MenuListHeader;
 Menu.ListFooter = MenuListFooter;
 Menu.Item = MenuItem;
 Menu.Trigger = MenuTrigger;
+Menu.TriggerButton = MenuTriggerButton;
 Menu.Divider = MenuDivider;
 Menu.SectionTitle = MenuSectionTitle;
 Menu.Submenu = Submenu;

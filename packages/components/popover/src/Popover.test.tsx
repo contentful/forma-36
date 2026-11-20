@@ -17,9 +17,7 @@ import { StarIcon } from '@contentful/f36-icons';
 
 const renderTrigger = (triggerType: string, buttonProps) => {
   if (triggerType === 'TriggerButton')
-    return (
-      <Popover.TriggerButton {...buttonProps}>Toggle</Popover.TriggerButton>
-    );
+    return <Popover.TriggerButton title="Toggle" {...buttonProps} />;
 
   if (triggerType === 'IconTriggerButton')
     return (

@@ -4,7 +4,7 @@ import {
   useHref,
   useLinkClickHandler,
 } from 'react-router-dom';
-import { Menu, IconButton } from '@contentful/f36-components';
+import { Menu } from '@contentful/f36-components';
 import { ListIcon } from '@contentful/f36-icons';
 
 function MenuLink({ children, replace = false, to, ...props }) {
@@ -24,13 +24,11 @@ export default function MenuWithReactRouterLinks() {
   return (
     <Router>
       <Menu>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List>
           <MenuLink to="/">Home</MenuLink>
           <MenuLink to="/about">About</MenuLink>
