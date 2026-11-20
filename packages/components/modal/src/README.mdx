@@ -21,6 +21,37 @@ import { Modal } from '@contentful/f36-components';
 import { Modal } from '@contentful/f36-modal';
 ```
 
+## Content and slots
+
+Everything you pass as `children` is rendered inside the `Modal.Content` compound component, which provides the padding and scrolling of the modal body. Use `modalContentProps` to customize this wrapper.
+
+This is the main reason to use the `header` and `controls` slots: `header` (takes `Modal.Header` or `Modal.DisplayHeader`) is rendered above the `Modal.Content` wrapper, and `controls` (takes `Modal.Controls`) is rendered underneath it. Passing a header or buttons as `children` would put them inside the scrollable content area instead.
+
+```jsx static=true
+<Modal
+  isShown={isShown}
+  onClose={onClose}
+  header={<Modal.Header title="Create content type" />}
+  controls={<Modal.Controls>{/* buttons */}</Modal.Controls>}
+>
+  {/* rendered inside Modal.Content */}
+</Modal>
+```
+
+### Rendering children without a wrapper
+
+To render children without the `Modal.Content` wrapper, pass a function as `children`. The `header` and `controls` slots are still rendered around its result, but `modalContentProps` and the default header are not applied. Use this sparingly, only when you need full control over the layout of the modal body.
+
+```jsx static=true
+<Modal
+  isShown={isShown}
+  onClose={onClose}
+  header={<Modal.Header title="Custom layout" />}
+>
+  {() => <CustomFullBleedLayout />}
+</Modal>
+```
+
 ## Examples
 
 Use `Modal`:
@@ -33,9 +64,11 @@ Don't use `Modal`:
 - for nonessential information that is not related to the current user flow
 - for interrupting high-stake processes such as checkout flows
 
-### Basic
+### General usage
 
-```jsx file=../examples/BasicModalExample.tsx
+The close button in `Modal.Header` is wired to the modal's `onClose` automatically.
+
+```jsx file=../examples/ModalGeneralUsageExample.tsx
 
 ```
 
@@ -53,9 +86,25 @@ Don't use `Modal`:
 
 ### Custom title and subtitle ids
 
-The title and subtitle receive generated ids, which `Modal` uses for `aria-labelledby` and `aria-describedby`. If you need stable ids, pass `titleId` and `subtitleId` via `modalHeaderProps`. The ids are read on mount only.
+The title and subtitle receive generated ids, which `Modal` uses for `aria-labelledby` and `aria-describedby`. If you need stable ids, pass `titleId` and `subtitleId` to `Modal.Header`. The ids are read on mount only.
 
 ```jsx file=../examples/ModalWithCustomIdsExample.tsx
+
+```
+
+### BasicModal
+
+`BasicModal` is a shortcut for a modal with a title. Pass `title` and `subtitle` directly; use `headerProps` for any other `Modal.Header` props.
+
+```jsx file=../examples/BasicModalComponentExample.tsx
+
+```
+
+### DisplayModal
+
+`DisplayModal` shows a centered header with an optional illustration, and centered controls. Use it for onboarding or informative moments, not for forms.
+
+```jsx file=../examples/DisplayModalExample.tsx
 
 ```
 
