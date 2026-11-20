@@ -27,11 +27,13 @@ Use `Modal`:
 
 - to request information critical for a user to continue their current process
 - to warn users about a potentially destructive action they are taking
+- when changes need an explicit commit, such as Save, Confirm or Delete
 
 Don't use `Modal`:
 
 - for nonessential information that is not related to the current user flow
 - for interrupting high-stake processes such as checkout flows
+- for a few settings of one item that apply immediately, without Save or Cancel: use [InlineConfigurationPopover](/components/inline-configuration-popover/)
 
 ### Basic
 
