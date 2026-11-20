@@ -6,6 +6,15 @@ This log tracks all deprecated features and components in Forma 36. For details 
 
 ## Active Deprecations
 
+### Modal props `title`, `subtitle`, `modalHeaderProps` and `Modal.Header` `onClose` (`@contentful/f36-modal`)
+
+- **Deprecated**: 2026-11-18
+- **Deprecated In**: v6.x.x
+- **Removal Planned**: next Major (v7)
+- **Reason**: Replaced by the `header` and `controls` slots, which render the header and buttons outside the scrollable content without a render function. `Modal.Header` now takes `onClose` from the `Modal`.
+- **Migration**: Use `header={<Modal.Header title="…" />}` and `controls={<Modal.Controls>…</Modal.Controls>}`; the `v7-modal` codemod migrates most usages
+- **Guide**: [Migration documentation](./packages/components/modal/MIGRATION.md)
+
 ### Pill (`@contentful/f36-pill`)
 
 - **Deprecated**: 2026-05-21

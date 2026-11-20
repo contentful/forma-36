@@ -12,6 +12,7 @@ import { Text, Subheading } from '@contentful/f36-typography';
 
 import { useModalHeader } from '../useModalHeader';
 import { getModalHeaderStyles } from './ModalHeader.styles';
+import { warnDeprecated } from '../warnDeprecated';
 
 interface ModalHeaderInternalProps extends CommonProps {
   title?: string;
@@ -123,8 +124,14 @@ export const ModalHeaderBase = ({
 
 ModalHeaderBase.displayName = 'ModalHeaderBase';
 
-export const ModalHeader = (props: ModalHeaderProps): React.ReactElement => (
-  <ModalHeaderBase {...props} />
-);
+export const ModalHeader = (props: ModalHeaderProps): React.ReactElement => {
+  if (props.onClose !== undefined) {
+    warnDeprecated(
+      'Modal.Header onClose',
+      'The header uses the `onClose` of the Modal; pass the logic there.',
+    );
+  }
+  return <ModalHeaderBase {...props} />;
+};
 
 ModalHeader.displayName = 'ModalHeader';

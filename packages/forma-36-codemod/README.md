@@ -33,6 +33,20 @@ f36-codemod <path> [...options]
 
 ## Included Transforms
 
+### v7
+
+codemods for migration from version 6 to version 7
+
+#### `v7/modal`
+
+Migrates `Modal` to the `header` and `controls` slots:
+
+- `title`, `subtitle` and `modalHeaderProps` move into `header={<Modal.Header … />}`
+- render functions that only return `Modal.Header`, `Modal.Content` and `Modal.Controls` become slots, the `Modal.Content` children become the `Modal` children and its props move to `modalContentProps`
+- `onClose` on `Modal.Header` is removed when it is the same as the `onClose` of the `Modal`
+
+Every usage that cannot be migrated safely is left unchanged and printed as a warning with file and line, see the [Modal migration guide](../components/modal/MIGRATION.md). Run your formatter afterwards.
+
 ### v6
 
 codemods for migration from version 5 to version 6

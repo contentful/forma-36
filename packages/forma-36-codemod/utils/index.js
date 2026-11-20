@@ -18,6 +18,11 @@ const { getNewProp } = require('./getNewProp');
 const { updateComponentsToImport } = require('./updateComponentsToImport');
 const { changeIdentifier } = require('./changeIdentifier');
 const { pipe } = require('./pipe');
+const { isFragment } = require('./isFragment');
+const { getNonBlankChildren } = require('./getNonBlankChildren');
+const { getRenderFunction } = require('./getRenderFunction');
+const { objectToAttributes } = require('./objectToAttributes');
+const { attributesToObject } = require('./attributesToObject');
 
 module.exports = {
   getComponentLocalName,
@@ -40,4 +45,9 @@ module.exports = {
   updateComponentsToImport,
   changeIdentifier,
   pipe,
+  isFragment,
+  getNonBlankChildren,
+  getRenderFunction,
+  objectToAttributes,
+  attributesToObject,
 };
