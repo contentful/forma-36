@@ -1,5 +1,7 @@
 export { Modal } from './CompoundModal';
 export type { ModalProps } from './Modal';
+export { BasicModal } from './BasicModal/BasicModal';
+export type { BasicModalProps } from './BasicModal/BasicModal';
 export { ModalConfirm } from './ModalConfirm/ModalConfirm';
 export type { ModalConfirmProps } from './ModalConfirm/ModalConfirm';
 export { ModalContent } from './ModalContent/ModalContent';
