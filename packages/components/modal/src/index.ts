@@ -2,8 +2,14 @@ export { Modal } from './CompoundModal';
 export type { ModalProps } from './Modal';
 export { BasicModal } from './BasicModal/BasicModal';
 export type { BasicModalProps } from './BasicModal/BasicModal';
-export { ModalConfirm } from './ModalConfirm/ModalConfirm';
-export type { ModalConfirmProps } from './ModalConfirm/ModalConfirm';
+export {
+  ConfirmationModal,
+  ModalConfirm,
+} from './ConfirmationModal/ConfirmationModal';
+export type {
+  ConfirmationModalProps,
+  ModalConfirmProps,
+} from './ConfirmationModal/ConfirmationModal';
 export { ModalContent } from './ModalContent/ModalContent';
 export type { ModalContentProps } from './ModalContent/ModalContent';
 export { ModalControls } from './ModalControls/ModalControls';

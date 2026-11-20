@@ -1,17 +1,17 @@
 import React from 'react';
 import {
   Button,
-  ModalConfirm,
+  ConfirmationModal,
   Text,
   ModalLauncher,
 } from '@contentful/f36-components';
 import { FileArchiveIcon } from '@contentful/f36-icons';
 
-export default function ModalConfirmPromptExample() {
+export default function ConfirmationModalPromptExample() {
   const onArchive = () => {
     ModalLauncher.open<boolean>(({ isShown, onClose }) => {
       return (
-        <ModalConfirm
+        <ConfirmationModal
           title="This entry is linked in other entries"
           intent="negative"
           isShown={isShown}
@@ -28,7 +28,7 @@ export default function ModalConfirmPromptExample() {
             There are 2 other entries that link to this entry. If you archive
             it, your app(s) might break.
           </Text>
-        </ModalConfirm>
+        </ConfirmationModal>
       );
     }).then((result) => {
       if (result === true) {

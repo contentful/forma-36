@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Modal, ModalHeader } from '@contentful/f36-components';
+import { ConfirmationModal, type ConfirmationModalProps } from '@contentful/f36-components';
+import { ConfirmationModal as Confirm } from '@contentful/f36-modal';
 
 export function TitleProps({ isShown, onClose }) {
   return (
@@ -145,5 +147,22 @@ export function HeaderOnCloseDiffersOnlyInString({ isShown, log }) {
       <Modal.Header title="Title" onClose={() => log('a b')} />
       <Modal.Content>Body</Modal.Content>
     </Modal>
+  );
+}
+
+export function RenamesModalConfirms(props: ConfirmationModalProps) {
+  const {isShown, onConfirm, onCancel} = props;
+  return (
+    <ConfirmationModal isShown={isShown} title='Confirmation Modal' onCancel={onCancel} onConfirm={onConfirm}>Body
+          </ConfirmationModal>
+  );
+}
+
+export function LeavesAliasAlone(props: ConfirmationModalProps) {
+  const {isShown, onConfirm, onCancel} = props;
+  return (
+    <Confirm isShown={isShown} title='Confirmation Modal' onCancel={onCancel} onConfirm={onConfirm}>
+        Body
+    </Confirm>
   );
 }

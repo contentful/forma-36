@@ -22,6 +22,7 @@ The `title`, `subtitle` and `modalHeaderProps` props of `Modal`, and the `onClos
 - new `closeIconLabel` prop on `Modal`, sets the accessible label of the header close button
 - `Modal.Header` now shows the close button whenever the `Modal` has an `onClose`, even if you don't pass `onClose` to the header
 - new components `BasicModal`, `DisplayModal` and `Modal.DisplayHeader`
+- `ModalConfirm` is renamed to `ConfirmationModal`, and `ModalConfirmProps` to `ConfirmationModalProps`. The old names are deprecated and will be removed in v7.
 
 ---
 
@@ -78,6 +79,13 @@ The codemod changes these cases:
 >
   Body
 </Modal>
+
+// ModalConfirm and ModalConfirmProps
+import { ModalConfirm, type ModalConfirmProps } from '@contentful/f36-components';
+<ModalConfirm isShown onConfirm={onConfirm} onCancel={onCancel}>Body</ModalConfirm>
+// becomes
+import { ConfirmationModal, type ConfirmationModalProps } from '@contentful/f36-components';
+<ConfirmationModal isShown onConfirm={onConfirm} onCancel={onCancel}>Body</ConfirmationModal>
 ```
 
 Usages it can't migrate safely are left unchanged and printed as a warning with file and line.
@@ -118,6 +126,7 @@ and the tests that cover the file.
 
 - [ ] No `title`, `subtitle` or `modalHeaderProps` on `Modal`
 - [ ] No `onClose` on `Modal.Header`
+- [ ] No `ModalConfirm` or `ModalConfirmProps` imports
 - [ ] No deprecation warnings from `[Modal]` in the browser console during development
 - [ ] Modals with a close button that should not have one are checked: the header shows it whenever the `Modal` has an `onClose`
 - [ ] Forms whose submit button moved into `controls` still submit

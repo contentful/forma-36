@@ -11,7 +11,7 @@ export const PARSER_CHOICES = [
 
 export const SETUP_CHOICES = [
   {
-    name: 'v7-modal: Migrate Modal to the header and controls slots. Moves title props and render functions that only contain Modal.Header, Modal.Content and Modal.Controls into slots, and removes redundant onClose on Modal.Header. Prints a warning for every usage that needs manual migration.',
+    name: 'v7-modal: Migrate Modal to the header and controls slots. Moves title props and render functions that only contain Modal.Header, Modal.Content and Modal.Controls into slots, and removes redundant onClose on Modal.Header, and renames ModalConfirm to ConfirmationModal. Prints a warning for every usage that needs manual migration.',
     short: 'Update modal',
     value: 'v7/modal',
   },

@@ -15,6 +15,15 @@ This log tracks all deprecated features and components in Forma 36. For details 
 - **Migration**: Use `header={<Modal.Header title="…" />}` and `controls={<Modal.Controls>…</Modal.Controls>}`; the `v7-modal` codemod migrates most usages
 - **Guide**: [Migration documentation](./packages/components/modal/MIGRATION.md)
 
+### ModalConfirm and `ModalConfirmProps` (`@contentful/f36-modal`)
+
+- **Deprecated**: 2026-11-19
+- **Deprecated In**: v6.x.x
+- **Removal Planned**: next Major (v7)
+- **Reason**: Renamed to `ConfirmationModal` to match the variant-first naming of `BasicModal` and `DisplayModal`. The API is unchanged.
+- **Migration**: Use `ConfirmationModal` and `ConfirmationModalProps` instead; the `v7-modal` codemod renames the imports and usages
+- **Guide**: [Migration documentation](./packages/components/modal/MIGRATION.md)
+
 ### Pill (`@contentful/f36-pill`)
 
 - **Deprecated**: 2026-05-21

@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { cleanup, render, waitFor } from '@testing-library/react';
 
-import { Modal, ModalConfirm } from './';
+import { Modal, ConfirmationModal } from './';
 
 const deprecationWarnings = (warn: ReturnType<typeof vi.spyOn>) =>
   warn.mock.calls
@@ -26,7 +26,7 @@ describe('deprecation warnings', () => {
     await waitFor(() => expect(document.body).toBeEmptyDOMElement());
   });
 
-  it.skip('does not warn for the slot API or ModalConfirm', () => {
+  it('does not warn for the slot API or ConfirmationModal', () => {
     render(
       <>
         <Modal
@@ -36,9 +36,9 @@ describe('deprecation warnings', () => {
         >
           Body
         </Modal>
-        <ModalConfirm isShown onCancel={() => {}} onConfirm={() => {}}>
+        <ConfirmationModal isShown onCancel={() => {}} onConfirm={() => {}}>
           Body
-        </ModalConfirm>
+        </ConfirmationModal>
       </>,
     );
 
