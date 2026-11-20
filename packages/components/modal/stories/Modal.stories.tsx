@@ -3,6 +3,7 @@ import type { Meta, StoryObj, StoryFn } from '@storybook/react-vite';
 import { action } from 'storybook/actions';
 import { Button } from '@contentful/f36-button';
 import { Badge } from '@contentful/f36-badge';
+import { CheckCircleIcon } from '@contentful/f36-icons';
 
 import { type ModalProps } from '../src/Modal';
 import { Modal } from '../src';
@@ -220,21 +221,21 @@ export const ModalWithoutHeader: StoryFn<ModalProps> = (props) => {
 
 export const WithHeaderAndControlsSlots: StoryFn<ModalProps> = () => {
   const [isShown, setShown] = useState(true);
-  const close = () => setShown(false);
+  const handleClose = () => setShown(false);
 
   return (
     <div>
       <Button onClick={() => setShown(true)}>Open modal</Button>
       <Modal
         isShown={isShown}
-        onClose={close}
+        onClose={handleClose}
         header={<Modal.Header title="Slot header" subtitle="Subtitle" />}
         controls={
           <Modal.Controls>
-            <Button size="small" variant="secondary" onClick={close}>
+            <Button size="small" variant="secondary" onClick={handleClose}>
               Cancel
             </Button>
-            <Button size="small" variant="positive" onClick={close}>
+            <Button size="small" variant="positive" onClick={handleClose}>
               Confirm
             </Button>
           </Modal.Controls>
@@ -267,6 +268,40 @@ export const WithCustomHeaderContent: StoryFn<ModalProps> = () => {
   );
 };
 
+export const WithDisplayHeader: StoryFn<ModalProps> = () => {
+  const [isShown, setShown] = useState(true);
+
+  return (
+    <div>
+      <Button onClick={() => setShown(true)}>Open modal</Button>
+      <Modal
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        header={
+          <Modal.DisplayHeader
+            illustration={<CheckCircleIcon color="green" />}
+            title="Successs"
+          />
+        }
+        modalContentProps={{ style: { textAlign: 'center' } }}
+        controls={
+          <Modal.Controls justifyContent="center">
+            <Button
+              size="small"
+              variant="positive"
+              onClick={() => action('close')()}
+            >
+              Done
+            </Button>
+          </Modal.Controls>
+        }
+      >
+        Your action was successful
+      </Modal>
+    </div>
+  );
+};
+
 export const NotDismissable: StoryFn<ModalProps> = () => {
   const [isShown, setShown] = useState(true);
   const close = () => setShown(false);
@@ -277,7 +312,8 @@ export const NotDismissable: StoryFn<ModalProps> = () => {
       <Modal
         isShown={isShown}
         onClose={close}
-        isDismissable={false}
+        shouldCloseOnEscapePress={false}
+        shouldCloseOnOverlayClick={false}
         header={<Modal.Header title="Not dismissable" />}
         controls={
           <Modal.Controls>
@@ -287,7 +323,7 @@ export const NotDismissable: StoryFn<ModalProps> = () => {
           </Modal.Controls>
         }
       >
-        No close button; esc and overlay click do nothing.
+        Can not be closed by outside click or escape
       </Modal>
     </div>
   );
