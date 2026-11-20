@@ -1,5 +1,6 @@
-import React, { useState, MouseEventHandler, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import type { Meta, StoryObj, StoryFn } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 import { Button } from '@contentful/f36-button';
 import { Badge } from '@contentful/f36-badge';
 
@@ -50,18 +51,24 @@ export default {
 
 export const Basic: StoryObj<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
+  const { title, subtitle, ...otherProps } = props;
 
   return (
     <div>
       <Button onClick={() => setShown(true)}>Open modal</Button>
       <Modal
-        {...props}
-        modalHeaderProps={{
-          className: 'additional-modal-header-class',
-          aria: {
-            closeIconLabel: 'Custom close modal aria label',
-          },
-        }}
+        {...otherProps}
+        header={
+          <Modal.Header
+            title={title}
+            subtitle={subtitle}
+            className="additional-modal-header-class"
+            aria={{
+              closeIconLabel: 'Custom close modal aria label',
+            }}
+          />
+        }
+
         modalContentProps={{
           className: 'additional-modal-content-class',
         }}
@@ -81,20 +88,24 @@ Basic.args = {
 
 export const WithCustomIds: StoryObj<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
-
+  const { title, subtitle, ...otherProps } = props;
   return (
     <div>
       <Button onClick={() => setShown(true)}>Open modal</Button>
       <Modal
-        {...props}
-        modalHeaderProps={{
-          className: 'additional-modal-header-class',
-          titleId: 'custom-title',
-          subtitleId: 'custom-subtitle',
-          aria: {
-            closeIconLabel: 'Custom close modal aria label',
-          },
-        }}
+        {...otherProps}
+        header={
+          <Modal.Header
+            title={title}
+            subtitle={subtitle}
+            titleId="custom-title-id"
+            subtitleId="custom-subtitle-id"
+            className="additional-modal-header-class"
+            aria={{
+              closeIconLabel: 'Custom close modal aria label',
+            }}
+          />
+        }
         modalContentProps={{
           className: 'additional-modal-content-class',
         }}
@@ -114,13 +125,18 @@ WithCustomIds.args = {
 
 export const LongModal: StoryObj<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
-
+  const { title, subtitle, ...otherProps } = props;
   return (
     <div>
       <Button onClick={() => setShown(true)}>
         Different behaviors for modal
       </Button>
-      <Modal {...props} isShown={isShown} onClose={() => setShown(false)}>
+      <Modal
+        header={<Modal.Header title={title} subtitle={subtitle} />}
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        {...otherProps}
+      >
         <div style={{ marginBottom: 10 }}>
           Toggle <code>allowHeightOverflow</code> to see different behaviours
         </div>
@@ -137,54 +153,54 @@ LongModal.args = {
   allowHeightOverflow: false,
 };
 
-export const ControllerModal: StoryObj<ModalProps> = (props) => {
+export const ModalWithInitialFocus: StoryObj<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
   const confirmRef = useRef(null);
+  const handleClose = (source: string) => {
+    action(`closed by ${source}`)();
+    setShown(false);
+  };
 
   return (
     <div>
       <Button onClick={() => setShown(true)}>Show centered modal</Button>
       <Modal
         {...props}
+        onClose={() => handleClose('Modal (Esc / overlay / X-Button)')}
+        header={<Modal.Header title={props.title} />}
+        controls={
+          <Modal.Controls>
+            <Button
+              size="small"
+              onClick={() => handleClose('Close button')}
+              variant="secondary"
+            >
+              Close
+            </Button>
+            <Button
+              size="small"
+              onClick={() => handleClose('Confirm button')}
+              variant="positive"
+              ref={confirmRef}
+            >
+              Confirm
+            </Button>
+          </Modal.Controls>
+        }
         isShown={isShown}
-        onClose={() => setShown(false)}
         initialFocusRef={confirmRef}
       >
-        {({
-          title,
-          onClose,
-        }: {
-          title: string;
-          onClose: MouseEventHandler;
-        }) => (
-          <React.Fragment>
-            <Modal.Header title={title} onClose={onClose} />
-            <Modal.Content>Hello from controlled modal window</Modal.Content>
-            <Modal.Controls>
-              <Button size="small" onClick={onClose} variant="secondary">
-                Close
-              </Button>
-              <Button
-                size="small"
-                onClick={onClose}
-                variant="positive"
-                ref={confirmRef}
-              >
-                Confirm
-              </Button>
-            </Modal.Controls>
-          </React.Fragment>
-        )}
+        Hello from controlled modal window
       </Modal>
     </div>
   );
 };
 
-ControllerModal.args = {
-  title: 'Centered modal',
+ModalWithInitialFocus.args = {
+  title: 'Confirm is focused',
 };
 
-export const ModalWithChildComponentInHeader: StoryFn<ModalProps> = (props) => {
+export const ModalWithoutHeader: StoryFn<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
 
   return (
@@ -194,16 +210,84 @@ export const ModalWithChildComponentInHeader: StoryFn<ModalProps> = (props) => {
         {...props}
         isShown={isShown}
         onClose={() => setShown(false)}
-        size="fullWidth"
+        aria={{ label: 'Modal without explicit header or title' }}
       >
-        {({ onClose }) => (
-          <>
-            <Modal.Header title="With Child Component" onClose={onClose}>
-              <Badge>Child Component</Badge>
-            </Modal.Header>
-            <Modal.Content>Modal content</Modal.Content>
-          </>
-        )}
+        Modal content
+      </Modal>
+    </div>
+  );
+};
+
+export const WithHeaderAndControlsSlots: StoryFn<ModalProps> = () => {
+  const [isShown, setShown] = useState(true);
+  const close = () => setShown(false);
+
+  return (
+    <div>
+      <Button onClick={() => setShown(true)}>Open modal</Button>
+      <Modal
+        isShown={isShown}
+        onClose={close}
+        header={<Modal.Header title="Slot header" subtitle="Subtitle" />}
+        controls={
+          <Modal.Controls>
+            <Button size="small" variant="secondary" onClick={close}>
+              Cancel
+            </Button>
+            <Button size="small" variant="positive" onClick={close}>
+              Confirm
+            </Button>
+          </Modal.Controls>
+        }
+      >
+        The close button comes from the Modal, no onClose on the header.
+      </Modal>
+    </div>
+  );
+};
+
+export const WithCustomHeaderContent: StoryFn<ModalProps> = () => {
+  const [isShown, setShown] = useState(true);
+
+  return (
+    <div>
+      <Button onClick={() => setShown(true)}>Open modal</Button>
+      <Modal
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        header={
+          <Modal.Header title="With badge">
+            <Badge>Beta</Badge>
+          </Modal.Header>
+        }
+      >
+        Modal content
+      </Modal>
+    </div>
+  );
+};
+
+export const NotDismissable: StoryFn<ModalProps> = () => {
+  const [isShown, setShown] = useState(true);
+  const close = () => setShown(false);
+
+  return (
+    <div>
+      <Button onClick={() => setShown(true)}>Open modal</Button>
+      <Modal
+        isShown={isShown}
+        onClose={close}
+        isDismissable={false}
+        header={<Modal.Header title="Not dismissable" />}
+        controls={
+          <Modal.Controls>
+            <Button size="small" variant="primary" onClick={close}>
+              Done
+            </Button>
+          </Modal.Controls>
+        }
+      >
+        No close button; esc and overlay click do nothing.
       </Modal>
     </div>
   );
