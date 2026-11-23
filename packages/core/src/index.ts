@@ -31,3 +31,5 @@ export type { UseControllableStateProps } from './hooks';
 export { mergeRefs } from './utils/mergeRefs';
 export { getEntityStatusStyles } from './utils/getEntityStatusStyles';
 export { getMenuItemStyles } from './utils/getMenuItem.styles';
+export { warnDeprecated } from './utils/warnDeprecated';
+export type { WarnDeprecatedOptions } from './utils/warnDeprecated';
