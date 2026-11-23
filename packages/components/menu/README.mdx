@@ -4,7 +4,7 @@ type: 'component'
 status: 'stable'
 slug: /components/menu/
 github: 'https://github.com/contentful/forma-36/tree/main/packages/components/menu'
-typescript: ./src/Menu.tsx,./src/MenuItem/MenuItem.tsx,./src/MenuList/MenuList.tsx
+typescript: ./src/Menu.tsx,./src/MenuItem/MenuItem.tsx,./src/MenuList/MenuList.tsx,./src/MenuTriggerButton/MenuTriggerButton.tsx
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-menu--basic'
 ---
 
@@ -20,7 +20,8 @@ import { Menu } from '@contentful/f36-components';
 
 `Menu` is based on the popover component and offers compound components to build flexible menus that can be nested.
 
-1. `<Menu.Trigger>` The wrapper for the menu list trigger. Must be a direct child of `<Menu>`.  
+1. `<Menu.TriggerButton>` The preferred way to create a menu list trigger. Can be a `Button` or `IconButton`. Must be a direct child of `<Menu>`.
+1. `<Menu.Trigger>` A wrapper for a custom menu list trigger. Must be a direct child of `<Menu>`.
    NOTE: 🚨 Ensure that the component that you pass accepts `ref`. Consider using `forwardRef` for functional components.
 1. `<Menu.List>`: The wrapper for the menu items. Must be a direct child of `<Menu>`.
 1. `<Menu.Item>` The trigger that handles menu selection. Must be a direct child of `<Menu.List>`.
@@ -40,9 +41,15 @@ import { Menu } from '@contentful/f36-components';
 
 ```
 
-### With simple Button as a trigger
+### With TextButton as a trigger
 
-```tsx file=examples/MenuWithButtonAsTrigger.tsx
+```tsx file=examples/MenuWithTextButtonAsTrigger.tsx
+
+```
+
+### With custom button as a trigger
+
+```tsx file=examples/MenuWithCustomButtonAsTrigger.tsx
 
 ```
 
@@ -126,6 +133,10 @@ but you can redefine them on any submenu by passing those props directly to that
 ### Menu
 
 <PropsTable of="Menu" />
+
+### Menu.TriggerButton
+
+<PropsTable of="MenuTriggerButton" />
 
 ### Menu.Item
 

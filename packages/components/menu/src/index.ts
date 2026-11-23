@@ -6,6 +6,8 @@ export { MenuItem } from './MenuItem/MenuItem';
 export type { MenuItemProps } from './MenuItem/MenuItem';
 export { MenuTrigger } from './MenuTrigger/MenuTrigger';
 export type { MenuTriggerProps } from './MenuTrigger/MenuTrigger';
+export { MenuTriggerButton } from './MenuTriggerButton/MenuTriggerButton';
+export type { MenuTriggerButtonProps } from './MenuTriggerButton/MenuTriggerButton';
 export { MenuDivider } from './MenuDivider/MenuDivider';
 export type { MenuDividerProps } from './MenuDivider/MenuDivider';
 export { MenuSectionTitle } from './MenuSectionTitle/MenuSectionTitle';

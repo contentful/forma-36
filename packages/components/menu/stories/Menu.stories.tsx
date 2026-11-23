@@ -1,6 +1,5 @@
 import React from 'react';
 import type { StoryObj, Meta } from '@storybook/react-vite';
-import { IconButton, Button } from '@contentful/f36-button';
 import { ListIcon, CheckIcon } from '@contentful/f36-icons';
 import { action } from 'storybook/actions';
 import { TextInput } from '@contentful/f36-forms';
@@ -62,16 +61,13 @@ export default {
 
 export const Basic: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
-    const triggerElement = (
-      <IconButton
-        variant="secondary"
-        icon={<ListIcon />}
-        aria-label="toggle menu"
-      />
-    );
     return (
       <Menu {...args}>
-        <Menu.Trigger>{triggerElement}</Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List>
           <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
           <Menu.Item>Embed existing entry</Menu.Item>
@@ -112,13 +108,11 @@ export const Controlled: StoryObj<MenuProps> = {
         onClose={callbackOnMenuClose}
         onOpen={callbackOnMenuOpen}
       >
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List>
           <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
           <Menu.Item>Embed existing entry</Menu.Item>
@@ -153,13 +147,11 @@ export const WithInput: StoryObj<MenuProps> = {
         onClose={callbackOnMenuClose}
         onOpen={callbackOnMenuOpen}
       >
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List>
           <TextInput
             value={inputValue}
@@ -178,19 +170,106 @@ export const WithInput: StoryObj<MenuProps> = {
   },
 };
 
+export const WithTextButtonTrigger: StoryObj<MenuProps> = {
+  render: (args: MenuProps) => {
+    return (
+      <Menu {...args}>
+        <Menu.TriggerButton variant="secondary" title="Toggle menu" />
+        <Menu.List>
+          <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
+          <Menu.Item>Embed existing entry</Menu.Item>
+          <Menu.Item icon={<CheckIcon />}>
+            Create and embed existing entry
+          </Menu.Item>
+          <Menu.Divider />
+          <Menu.SectionTitle>Help</Menu.SectionTitle>
+          <Menu.Item as="a" href="https://contentful.com" target="_blank">
+            About Contentful
+          </Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
+
+  parameters: {
+    chromatic: { delay: 300 },
+  },
+};
+
+export const WithCustomTriggerElement: StoryObj<MenuProps> = {
+  render: (args: MenuProps) => {
+    return (
+      <Menu {...args}>
+        <Menu.Trigger>
+          <button type="button">Toggle menu</button>
+        </Menu.Trigger>
+        <Menu.List>
+          <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
+          <Menu.Item>Embed existing entry</Menu.Item>
+          <Menu.Item icon={<CheckIcon />}>
+            Create and embed existing entry
+          </Menu.Item>
+          <Menu.Divider />
+          <Menu.SectionTitle>Help</Menu.SectionTitle>
+          <Menu.Item as="a" href="https://contentful.com" target="_blank">
+            About Contentful
+          </Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
+
+  parameters: {
+    chromatic: { delay: 300 },
+  },
+};
+
+export const WithTriggerTooltip: StoryObj<MenuProps> = {
+  render: (args: MenuProps) => {
+    return (
+      <Menu {...args}>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+          withTooltip
+          tooltipProps={{
+            content: 'I am a Tooltip 🙌',
+            isVisible: true,
+          }}
+        />
+        <Menu.List>
+          <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
+          <Menu.Item>Embed existing entry</Menu.Item>
+          <Menu.Item icon={<CheckIcon />}>
+            Create and embed existing entry
+          </Menu.Item>
+          <Menu.Divider />
+          <Menu.SectionTitle>Help</Menu.SectionTitle>
+          <Menu.Item as="a" href="https://contentful.com" target="_blank">
+            About Contentful
+          </Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+  },
+
+  parameters: {
+    chromatic: { delay: 300 },
+  },
+};
+
 export const WithCustomTriggerLogic: StoryObj<MenuProps> = {
   render: function Render() {
     const [isOpen, setIsOpen] = React.useState(false);
     return (
       <Menu isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-            onClick={() => setIsOpen(!isOpen)}
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+          onClick={() => setIsOpen(!isOpen)}
+        />
         <Menu.List>
           <Menu.Item>Create an entry</Menu.Item>
           <Menu.Item>Remove an entry</Menu.Item>
@@ -205,13 +284,11 @@ export const WithDisabledItems: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen closeOnSelect={false} {...args}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List>
           <Menu.Item>Item 1</Menu.Item>
           <Menu.Item>Item 2</Menu.Item>
@@ -229,14 +306,13 @@ export const WithDisabledItems: StoryObj<MenuProps> = {
 
 export const WithTypeahead: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
-    const triggerElement = (
-      <Button variant="secondary" aria-label="toggle menu">
-        Jumps to a menu point when you type a letter
-      </Button>
-    );
     return (
       <Menu {...args} useTypeahead>
-        <Menu.Trigger>{triggerElement}</Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          aria-label="toggle menu"
+          title="Jumps to a menu point when you type a letter"
+        />
         <Menu.List>
           <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
           <Menu.Item>Embed existing entry</Menu.Item>
@@ -262,13 +338,11 @@ export const WithIconsOnItems: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List>
           <Menu.Item icon={<CheckIcon />}>Item 1</Menu.Item>
           <Menu.Item>Item 2</Menu.Item>
@@ -283,13 +357,11 @@ export const WithMaxHeight: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List
           // You can pass a classname with maxHeight style or a style object directly
           style={{ maxHeight: '200px' }}
@@ -312,13 +384,11 @@ export const WithStickyHeaderAndFooter: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List style={{ maxHeight: '300px' }}>
           <Menu.ListHeader>
             <Menu.Item>Item header</Menu.Item>
@@ -358,13 +428,11 @@ export const WithReactRouterLinks: StoryObj<MenuProps> = {
     return (
       <Router>
         <Menu {...args} defaultIsOpen>
-          <Menu.Trigger>
-            <IconButton
-              variant="secondary"
-              icon={<ListIcon />}
-              aria-label="toggle menu"
-            />
-          </Menu.Trigger>
+          <Menu.TriggerButton
+            variant="secondary"
+            icon={<ListIcon />}
+            aria-label="toggle menu"
+          />
           <Menu.List>
             <MenuLink to="/">Home</MenuLink>
             <MenuLink to="/about">About</MenuLink>
@@ -384,13 +452,11 @@ export const WithInitialFocusedItem: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
     return (
       <Menu defaultIsOpen {...args}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List>
           <Menu.Item>Create an entry</Menu.Item>
           <Menu.Item isInitiallyFocused>Remove an entry</Menu.Item>
@@ -408,13 +474,11 @@ export const WithSubmenu: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
     return (
       <Menu {...args}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List>
           <Menu.Item testId="non-submenu-item">Create an entry</Menu.Item>
           <Menu>
@@ -459,13 +523,11 @@ export const WithSubmenuDifferentAlignments: StoryObj<MenuProps> = {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <Menu {...args}>
-            <Menu.Trigger>
-              <IconButton
-                variant="secondary"
-                icon={<ListIcon />}
-                aria-label="toggle menu"
-              />
-            </Menu.Trigger>
+            <Menu.TriggerButton
+              variant="secondary"
+              icon={<ListIcon />}
+              aria-label="toggle menu"
+            />
             <Menu.List>
               <Menu.Item>Create an entry</Menu.Item>
               <Menu isAutoalignmentEnabled>
@@ -489,13 +551,11 @@ export const WithMultipleSubmenus: StoryObj<MenuProps> = {
   render: (args: MenuProps) => {
     return (
       <Menu {...args}>
-        <Menu.Trigger>
-          <IconButton
-            variant="secondary"
-            icon={<ListIcon />}
-            aria-label="toggle menu"
-          />
-        </Menu.Trigger>
+        <Menu.TriggerButton
+          variant="secondary"
+          icon={<ListIcon />}
+          aria-label="toggle menu"
+        />
         <Menu.List>
           <Menu.Item>Create an entry</Menu.Item>
 

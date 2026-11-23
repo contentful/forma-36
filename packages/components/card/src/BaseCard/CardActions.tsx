@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, type ButtonProps } from '@contentful/f36-button';
+import { type ButtonProps } from '@contentful/f36-button';
 import { DotsThreeIcon } from '@contentful/f36-icons';
 import { Menu } from '@contentful/f36-menu';
 import { cx } from '@emotion/css';
@@ -22,17 +22,15 @@ export const CardActions = ({
 
   return (
     <Menu>
-      <Menu.Trigger>
-        <IconButton
-          aria-label="Actions"
-          {...buttonProps}
-          icon={<DotsThreeIcon />}
-          className={cx(styles.root, buttonProps?.className)}
-          size="small"
-          variant="transparent"
-          testId="cf-ui-card-actions"
-        />
-      </Menu.Trigger>
+      <Menu.TriggerButton
+        aria-label="Actions"
+        {...buttonProps}
+        icon={<DotsThreeIcon />}
+        className={cx(styles.root, buttonProps?.className)}
+        size="small"
+        variant="transparent"
+        testId="cf-ui-card-actions"
+      />
       <Menu.List>{children}</Menu.List>
     </Menu>
   );

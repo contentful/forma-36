@@ -8,12 +8,19 @@ import {
 import { usePopoverContext } from '../PopoverContext';
 import { useMergeRefs } from '@floating-ui/react';
 
-type TextTriggerButtonProps = Omit<ButtonProps<'button'>, 'children'> & {
+export interface TextTriggerButtonProps extends Omit<
+  ButtonProps<'button'>,
+  'children'
+> {
+  /**
+   * Label when used as a TextButton
+   */
   title: string;
-};
+}
+
 type IconTriggerButtonProps = IconButtonProps<'button'>;
 
-export type PopoverButtonProps =
+export type PopoverTriggerButtonProps =
   TextTriggerButtonProps | IconTriggerButtonProps;
 
 function isTextTriggerButtonProps(
@@ -23,7 +30,7 @@ function isTextTriggerButtonProps(
 }
 
 export const PopoverTriggerButton = React.forwardRef(function (
-  props: PopoverButtonProps,
+  props: PopoverTriggerButtonProps,
   propRef,
 ) {
   const context = usePopoverContext();
