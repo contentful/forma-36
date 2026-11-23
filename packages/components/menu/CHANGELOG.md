@@ -1,5 +1,19 @@
 # Change Log
 
+## 6.32.0
+
+### Minor Changes
+
+- [#3799](https://github.com/contentful/forma-36/pull/3799) [`5bc6f00`](https://github.com/contentful/forma-36/commit/5bc6f00a5b23e7a339c6924680262c54f04e20a5) Thanks [@veu](https://github.com/veu)! - Add Menu.TriggerButton component as new standard trigger
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-button@6.32.0
+  - @contentful/f36-core@6.32.0
+  - @contentful/f36-icons@6.32.0
+  - @contentful/f36-typography@6.32.0
+
 ## 6.31.2
 
 ### Patch Changes
