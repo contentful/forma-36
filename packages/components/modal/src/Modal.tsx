@@ -1,7 +1,12 @@
 import * as React from 'react';
 import ReactModal from 'react-modal';
 
-import { Box, type CommonProps, type ExpandProps } from '@contentful/f36-core';
+import {
+  Box,
+  type CommonProps,
+  type ExpandProps,
+  warnDeprecated,
+} from '@contentful/f36-core';
 
 import { ModalContextProvider, type ModalIds } from './ModalContext';
 import {
@@ -19,8 +24,10 @@ import {
   type ModalControlsProps,
 } from './ModalControls/ModalControls';
 import { getModalStyles } from './Modal.styles';
-import { warnDeprecated } from './warnDeprecated';
 import type { ModalSizeType, ModalPositionType } from './types';
+
+const MIGRATION_GUIDE =
+  'https://github.com/contentful/forma-36/blob/main/packages/components/modal/MIGRATION.md';
 
 const ModalSizesMapper: { [key in ModalSizeType]: string } = {
   medium: '520px',
@@ -163,14 +170,17 @@ export const Modal = ({
   ...otherProps
 }: ExpandProps<ModalProps>) => {
   const { header, controls } = otherProps;
-  const headerSlotHint =
-    'Use the `header` slot with `<Modal.Header />` instead.';
-  if (otherProps.title !== undefined) warnDeprecated('title', headerSlotHint);
-  if (otherProps.subtitle !== undefined) {
-    warnDeprecated('subtitle', headerSlotHint);
-  }
+  const warnHeaderSlot = (prop: string) =>
+    warnDeprecated({
+      component: 'Modal',
+      prop,
+      hint: 'Use the `header` slot with `<Modal.Header />` instead.',
+      migrationGuide: MIGRATION_GUIDE,
+    });
+  if (otherProps.title !== undefined) warnHeaderSlot('title');
+  if (otherProps.subtitle !== undefined) warnHeaderSlot('subtitle');
   if (otherProps.modalHeaderProps !== undefined) {
-    warnDeprecated('modalHeaderProps', headerSlotHint);
+    warnHeaderSlot('modalHeaderProps');
   }
   if (process.env.NODE_ENV !== 'production') {
     if (

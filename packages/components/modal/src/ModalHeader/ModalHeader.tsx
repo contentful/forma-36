@@ -6,13 +6,17 @@ import {
   Flex,
   type PropsWithHTMLElement,
   type CommonProps,
+  warnDeprecated,
 } from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
 import { Text, Subheading } from '@contentful/f36-typography';
 
 import { useModalHeader } from '../useModalHeader';
 import { getModalHeaderStyles } from './ModalHeader.styles';
-import { warnDeprecated } from '../warnDeprecated';
+
+// duplicated from Modal.tsx; importing it would be circular (Modal imports ModalHeader)
+const MIGRATION_GUIDE =
+  'https://github.com/contentful/forma-36/blob/main/packages/components/modal/MIGRATION.md';
 
 interface ModalHeaderInternalProps extends CommonProps {
   title?: string;
@@ -126,10 +130,12 @@ ModalHeaderBase.displayName = 'ModalHeaderBase';
 
 export const ModalHeader = (props: ModalHeaderProps): React.ReactElement => {
   if (props.onClose !== undefined) {
-    warnDeprecated(
-      'Modal.Header onClose',
-      'The header uses the `onClose` of the Modal; pass the logic there.',
-    );
+    warnDeprecated({
+      component: 'ModalHeader',
+      prop: 'onClose',
+      hint: 'The header uses the `onClose` of the Modal; pass the logic there.',
+      migrationGuide: MIGRATION_GUIDE,
+    });
   }
   return <ModalHeaderBase {...props} />;
 };
