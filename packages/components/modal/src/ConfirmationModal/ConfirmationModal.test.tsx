@@ -120,8 +120,8 @@ it('keeps the deprecated ModalConfirm alias working and warns once', () => {
 
   expect(screen.getByRole('dialog', { name: 'Are you sure?' })).toBeTruthy();
   expect(warn).toHaveBeenCalledTimes(1);
-  expect(String(warn.mock.calls[0][0])).toContain(
-    '`ModalConfirm` is deprecated',
+  expect(warn).toHaveBeenCalledWith(
+    '`ModalConfirm` is deprecated and will be removed in the next major version. Use `ConfirmationModal` instead.',
   );
 
   warn.mockRestore();

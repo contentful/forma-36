@@ -6,7 +6,7 @@ import type { ModalHeaderProps } from '../ModalHeader/ModalHeader';
 import type { ModalContentProps } from '../ModalContent/ModalContent';
 import type { ModalControlsProps } from '../ModalControls/ModalControls';
 import { Button } from '@contentful/f36-button';
-import { warnDeprecated } from '../warnDeprecated';
+import { warnDeprecated } from '@contentful/f36-core';
 
 interface ConfirmationModalBaseProps {
   /**
@@ -198,8 +198,10 @@ export type ModalConfirmProps<T extends string = string> =
 export const ModalConfirm = <T extends string = string>(
   props: ModalConfirmProps<T>,
 ) => {
-  warnDeprecated('ModalConfirm', 'Use `ConfirmationModal` instead.');
-  // the conditional `aria` type cannot be spread generically; props are already checked by `T` above
+  warnDeprecated({
+    component: 'ModalConfirm',
+    hint: 'Use `ConfirmationModal` instead.',
+  });
   return <ConfirmationModal {...(props as ConfirmationModalProps)} />;
 };
 

@@ -3,8 +3,8 @@ const warned = new Set<string>();
 export interface WarnDeprecatedOptions {
   /** Component name, used as message prefix and to scope deduplication */
   component: string;
-  /** Deprecated prop (or API) name */
-  prop: string;
+  /** Deprecated prop (or API) name; omit when the whole component is deprecated */
+  prop?: string;
   /** What to use instead */
   hint: string;
   /** Link to the migration guide */
@@ -21,12 +21,13 @@ export const warnDeprecated = ({
   hint,
   migrationGuide,
 }: WarnDeprecatedOptions) => {
-  const key = `${component}.${prop}`;
+  const key = prop ? `${component}.${prop}` : component;
   if (process.env.NODE_ENV !== 'development' || warned.has(key)) return;
   warned.add(key);
+  const subject = prop ? `[${component}] \`${prop}\`` : `\`${component}\``;
   // eslint-disable-next-line no-console
   console.warn(
-    `[${component}] \`${prop}\` is deprecated and will be removed in the next major version. ${hint}` +
+    `${subject} is deprecated and will be removed in the next major version. ${hint}` +
       (migrationGuide ? ` See: ${migrationGuide}` : ''),
   );
 };

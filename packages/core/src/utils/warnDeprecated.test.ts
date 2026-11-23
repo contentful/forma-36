@@ -34,6 +34,14 @@ describe('warnDeprecated', () => {
     expect(warn).toHaveBeenCalledTimes(2);
   });
 
+  it('names the component when the whole component is deprecated', () => {
+    warnDeprecated({ component: 'OldName', hint: 'Use `NewName` instead.' });
+
+    expect(warn).toHaveBeenCalledWith(
+      '`OldName` is deprecated and will be removed in the next major version. Use `NewName` instead.',
+    );
+  });
+
   it('does not warn outside development', () => {
     vi.stubEnv('NODE_ENV', 'production');
     warnDeprecated({ component: 'Prod', prop: 'size', hint: 'Use `scale`.' });
