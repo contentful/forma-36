@@ -1,5 +1,16 @@
 # Change Log
 
+## 6.33.0
+
+### Patch Changes
+
+- Updated dependencies [[`664ddd8`](https://github.com/contentful/forma-36/commit/664ddd8c129f468741cac90b82edf2b664e216ad)]:
+  - @contentful/f36-core@6.33.0
+  - @contentful/f36-button@6.33.0
+  - @contentful/f36-drag-handle@6.33.0
+  - @contentful/f36-icons@6.33.0
+  - @contentful/f36-tooltip@6.33.0
+
 ## 6.32.0
 
 ### Patch Changes

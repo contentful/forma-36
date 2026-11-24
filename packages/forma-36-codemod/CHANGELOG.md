@@ -1,5 +1,11 @@
 # Change Log
 
+## 7.1.0
+
+### Minor Changes
+
+- [#3798](https://github.com/contentful/forma-36/pull/3798) [`664ddd8`](https://github.com/contentful/forma-36/commit/664ddd8c129f468741cac90b82edf2b664e216ad) Thanks [@Lelith](https://github.com/Lelith)! - Improve the Modal interface, add the ModalBasic and DisplayModal variants, and rename ModalConfirm to ConfirmationModal (ModalConfirm is still exported but deprecated). Add codemods to migrate.
+
 ## 7.0.0
 
 ### Major Changes

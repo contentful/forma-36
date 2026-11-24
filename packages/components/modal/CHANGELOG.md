@@ -1,5 +1,19 @@
 # Change Log
 
+## 6.33.0
+
+### Minor Changes
+
+- [#3798](https://github.com/contentful/forma-36/pull/3798) [`664ddd8`](https://github.com/contentful/forma-36/commit/664ddd8c129f468741cac90b82edf2b664e216ad) Thanks [@Lelith](https://github.com/Lelith)! - Improve the Modal interface, add the ModalBasic and DisplayModal variants, and rename ModalConfirm to ConfirmationModal (ModalConfirm is still exported but deprecated). Add codemods to migrate.
+
+### Patch Changes
+
+- Updated dependencies [[`664ddd8`](https://github.com/contentful/forma-36/commit/664ddd8c129f468741cac90b82edf2b664e216ad)]:
+  - @contentful/f36-core@6.33.0
+  - @contentful/f36-button@6.33.0
+  - @contentful/f36-icons@6.33.0
+  - @contentful/f36-typography@6.33.0
+
 ## 6.32.0
 
 ### Patch Changes
