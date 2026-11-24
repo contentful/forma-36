@@ -17,7 +17,7 @@ export function getModalHeaderStyles() {
     }),
     buttonContainer: css({
       position: 'relative',
-      width: tokens.spacing2Xl,
+      marginLeft: 'auto',
       height: tokens.spacingL,
       button: {
         position: 'absolute',
