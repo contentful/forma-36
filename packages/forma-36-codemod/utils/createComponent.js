@@ -1,7 +1,14 @@
+// `Modal.Header` -> JSXMemberExpression, `Modal` -> JSXIdentifier
+const toJsxName = (j, name) =>
+  name
+    .split('.')
+    .map((part) => j.jsxIdentifier(part))
+    .reduce((object, property) => j.jsxMemberExpression(object, property));
+
 /**
  * Creates a new component that can be added to a source code.
  * @param {{componentName: string, props: array, childre: array, isSelfClosing: boolean, j: *}} param - Object with component name, properties, children, isSelfClosing flag and jscodeshift API
- * @param {string} param.componentName - Name of the component
+ * @param {string} param.componentName - Name of the component, dotted names like `Modal.Header` are supported
  * @param {array} param.props - Array of properties
  * @param {array} param.children - Array of children
  * @param {boolean} param.isSelfClosing - Flag to determine if the component is self closing
@@ -15,15 +22,15 @@ module.exports.createComponent = function createComponent({
   isSelfClosing = false,
   j,
 }) {
-  const jsxIdentifier = j.jsxIdentifier(componentName);
-
   if (isSelfClosing) {
-    return j.jsxElement(j.jsxOpeningElement(jsxIdentifier, props, true));
+    return j.jsxElement(
+      j.jsxOpeningElement(toJsxName(j, componentName), props, true),
+    );
   }
 
   return j.jsxElement(
-    j.jsxOpeningElement(jsxIdentifier, props),
-    j.jsxClosingElement(jsxIdentifier),
+    j.jsxOpeningElement(toJsxName(j, componentName), props),
+    j.jsxClosingElement(toJsxName(j, componentName)),
     children,
   );
 };
