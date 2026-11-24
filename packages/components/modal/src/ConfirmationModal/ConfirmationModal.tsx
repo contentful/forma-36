@@ -6,18 +6,19 @@ import type { ModalHeaderProps } from '../ModalHeader/ModalHeader';
 import type { ModalContentProps } from '../ModalContent/ModalContent';
 import type { ModalControlsProps } from '../ModalControls/ModalControls';
 import { Button } from '@contentful/f36-button';
+import { warnDeprecated } from '@contentful/f36-core';
 
-interface ModalConfirmBaseProps {
+interface ConfirmationModalBaseProps {
   /**
    * When true, the dialog is shown.
    */
   isShown: boolean;
   /**
-   * Function that will be called when the confirm button is clicked. This does not close the ModalConfirm.
+   * Function that will be called when the confirm button is clicked. This does not close the ConfirmationModal.
    */
   onConfirm(): void;
   /**
-   * Function that will be called when the cancel button is clicked. This does not close the ModalConfirm.
+   * Function that will be called when the cancel button is clicked. This does not close the ConfirmationModal.
    */
   onCancel: ModalProps['onClose'];
   /**
@@ -29,7 +30,7 @@ interface ModalConfirmBaseProps {
    */
   cancelLabel?: string | false;
   /**
-   * The intent of the ModalConfirm. Used for the Button.
+   * The intent of the ConfirmationModal. Used for the Button.
    */
   intent?: 'primary' | 'positive' | 'negative';
   /**
@@ -84,8 +85,8 @@ interface ModalConfirmBaseProps {
   children: React.ReactNode;
 }
 
-export type ModalConfirmProps<T extends string = string> =
-  ModalConfirmBaseProps & {
+export type ConfirmationModalProps<T extends string = string> =
+  ConfirmationModalBaseProps & {
     /**
      * Modal title that is used in header
      */
@@ -104,7 +105,7 @@ export type ModalConfirmProps<T extends string = string> =
           aria?: ModalProps['aria'];
         });
 
-export const ModalConfirm = <T extends string = string>({
+export const ConfirmationModal = <T extends string = string>({
   allowHeightOverflow = false,
   cancelLabel = 'Cancel',
   cancelTestId = 'cf-ui-modal-confirm-cancel-button',
@@ -127,7 +128,7 @@ export const ModalConfirm = <T extends string = string>({
   title = 'Are you sure?' as T,
   initialFocusRef,
   aria,
-}: ModalConfirmProps<T>) => {
+}: ConfirmationModalProps<T>) => {
   const cancelRef = React.useRef(null);
 
   const confirmButton = confirmLabel ? (
@@ -169,22 +170,39 @@ export const ModalConfirm = <T extends string = string>({
     >
       {() => {
         return (
-          <React.Fragment>
-            <Modal.Header
-              title={title}
-              {...modalHeaderProps}
-              onClose={onCancel}
-            />
+          <>
+            <Modal.Header title={title} {...modalHeaderProps} />
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>
             <Modal.Controls {...modalControlsProps}>
               {cancelButton}
               {confirmButton}
             </Modal.Controls>
-          </React.Fragment>
+          </>
         );
       }}
     </Modal>
   );
+};
+
+ConfirmationModal.displayName = 'ConfirmationModal';
+
+/**
+ * @deprecated Use `ConfirmationModalProps` instead. Will be removed in v7.
+ */
+export type ModalConfirmProps<T extends string = string> =
+  ConfirmationModalProps<T>;
+
+/**
+ * @deprecated Use `ConfirmationModal` instead. Will be removed in v7.
+ */
+export const ModalConfirm = <T extends string = string>(
+  props: ModalConfirmProps<T>,
+) => {
+  warnDeprecated({
+    component: 'ModalConfirm',
+    hint: 'Use `ConfirmationModal` instead.',
+  });
+  return <ConfirmationModal {...(props as ConfirmationModalProps)} />;
 };
 
 ModalConfirm.displayName = 'ModalConfirm';
