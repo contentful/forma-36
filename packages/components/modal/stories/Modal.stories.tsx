@@ -20,6 +20,7 @@ export default {
   title: 'Components/Modal',
   component: Modal,
   parameters: {
+    layout: 'padded',
     propTypes: [Modal['__docgenInfo']],
   },
   decorators: [
@@ -31,21 +32,19 @@ export default {
     children: { control: { disable: true } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
-    position: { control: { type: 'select', options: ['center', 'top'] } },
+    position: { control: 'select', options: ['center', 'top'] },
     size: {
-      control: {
-        type: 'select',
-        options: [
-          'small',
-          'medium',
-          'large',
-          'fullWidth',
-          'fullscreen',
-          'zen',
-          '200px',
-          '1500px',
-        ],
-      },
+      control: 'select',
+      options: [
+        'small',
+        'medium',
+        'large',
+        'fullWidth',
+        'fullscreen',
+        'zen',
+        '200px',
+        '1500px',
+      ],
     },
   },
 } as Meta;

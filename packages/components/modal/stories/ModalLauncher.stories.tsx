@@ -10,6 +10,10 @@ import { Modal } from '../src';
 export default {
   title: 'Utilities/ModalLauncher',
   component: ModalLauncher,
+  parameters: {
+    // 'centered' shrinks react-modal's portal to 0x0, which breaks its focus trap
+    layout: 'padded',
+  },
 } as Meta;
 
 export const Basic: StoryFn = () => {

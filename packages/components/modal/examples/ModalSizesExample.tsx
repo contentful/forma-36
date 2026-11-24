@@ -40,36 +40,33 @@ export default function ModalSizesExample() {
           Click to open a modal
         </Button>
       </Form>
-      <Modal onClose={() => setShown(false)} isShown={isShown} size={size}>
-        {() => (
-          <>
-            <Modal.Header
-              title="A modal with a specific size"
-              onClose={() => setShown(false)}
-            />
-            <Modal.Content>
-              <Text>
-                My size is <strong>{size}</strong>
-              </Text>
-            </Modal.Content>
-            <Modal.Controls>
-              <Button
-                variant="transparent"
-                size="small"
-                onClick={() => setShown(false)}
-              >
-                Close
-              </Button>
-              <Button
-                variant="positive"
-                size="small"
-                onClick={() => setShown(false)}
-              >
-                Confirm
-              </Button>
-            </Modal.Controls>
-          </>
-        )}
+      <Modal
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        size={size}
+        header={<Modal.Header title="A modal with a specific size" />}
+        controls={
+          <Modal.Controls>
+            <Button
+              variant="transparent"
+              size="small"
+              onClick={() => setShown(false)}
+            >
+              Close
+            </Button>
+            <Button
+              variant="positive"
+              size="small"
+              onClick={() => setShown(false)}
+            >
+              Confirm
+            </Button>
+          </Modal.Controls>
+        }
+      >
+        <Text>
+          My size is <strong>{size}</strong>
+        </Text>
       </Modal>
     </>
   );

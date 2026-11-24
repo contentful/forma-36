@@ -8,14 +8,16 @@ export default function ModalWithCustomIdsExample() {
     <>
       <Button onClick={() => setShown(true)}>Open modal</Button>
       <Modal
-        title="Modal title with custom id"
-        subtitle="Subtitle with custom id"
-        modalHeaderProps={{
-          titleId: 'my-modal-title',
-          subtitleId: 'my-modal-subtitle',
-        }}
-        onClose={() => setShown(false)}
         isShown={isShown}
+        onClose={() => setShown(false)}
+        header={
+          <Modal.Header
+            title="Modal title with custom id"
+            subtitle="Subtitle with custom id"
+            titleId="my-modal-title"
+            subtitleId="my-modal-subtitle"
+          />
+        }
       >
         Modal content
       </Modal>
