@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, Paragraph, Heading } from '@contentful/f36-components';
 
-export default function ModalBasicExample() {
+export default function BasicModalExample() {
   const [isShown, setShown] = useState(false);
 
   return (
