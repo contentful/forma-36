@@ -115,6 +115,11 @@
       "status": "stable"
     },
     {
+      "title": "InlineConfigurationPopover",
+      "slug": "/components/inline-configuration-popover/",
+      "status": "alpha"
+    },
+    {
       "title": "Skeleton",
       "slug": "/components/skeleton/",
       "status": "stable"

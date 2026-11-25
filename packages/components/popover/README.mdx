@@ -24,6 +24,7 @@ import { Popover } from '@contentful/f36-popover';
 - Only if `Menu`, `Autocomplete` and `Multiselect` components are not covering your use cases, you should use `Popover`.
 - Before using this component, double-check your design requirements. We are providing `Menu`, `Autocomplete`, and `Multiselect` for more specific use-cases and they can address your needs.
 - Keep in mind that you will have to implement everything related to accessibility for the popover content.
+- To edit the settings of one item, such as a row in a list, with changes that apply immediately (no Save or Cancel), use [InlineConfigurationPopover](/components/inline-configuration-popover/) instead. It handles focus trapping, naming and announcements. If the changes need an explicit Save or Confirm, use a [Modal](/components/modal/).
 - Component is controllable, so don't forget to pass `onClose` callback prop. Otherwise `closeOnEsc` and `closeOnBlur` will not work properly.
 
 ## Examples
