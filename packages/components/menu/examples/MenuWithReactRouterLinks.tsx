@@ -27,7 +27,7 @@ export default function MenuWithReactRouterLinks() {
         <Menu.TriggerButton
           variant="secondary"
           icon={<ListIcon />}
-          aria-label="toggle menu"
+          aria-label="Toggle menu"
         />
         <Menu.List>
           <MenuLink to="/">Home</MenuLink>

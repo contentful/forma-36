@@ -5,7 +5,7 @@ export default function MenuWithCustomButtonAsTrigger() {
   return (
     <Menu>
       <Menu.Trigger>
-        <button type="button">toggle menu</button>
+        <button type="button">Toggle menu</button>
       </Menu.Trigger>
       <Menu.List>
         <Menu.Item>Create an entry</Menu.Item>
