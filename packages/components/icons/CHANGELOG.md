@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.34.0
+
+### Minor Changes
+
+- [#3808](https://github.com/contentful/forma-36/pull/3808) [`f240a87`](https://github.com/contentful/forma-36/commit/f240a8756cb8528ec080dc48578e7a59750d8461) Thanks [@damann](https://github.com/damann)! - Add ScrollIcon from Phosphor
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @contentful/f36-core@6.34.0
+  - @contentful/f36-icon@6.34.0
+
 ## 6.33.0
 
 ### Patch Changes
