@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Paragraph, Box, Popover } from '@contentful/f36-components';
+import { ListIcon } from '@contentful/f36-icons';
 
 export default function PopoverBasicExample() {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +8,9 @@ export default function PopoverBasicExample() {
   return (
     <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
       <Popover.TriggerButton
-        title="Toggle"
+        variant="secondary"
+        icon={<ListIcon />}
+        aria-label="Toggle popover"
         onClick={() => setIsOpen(!isOpen)}
       />
       <Popover.Content>

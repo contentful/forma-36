@@ -8,7 +8,7 @@ export default function MenuWithIcons() {
       <Menu.TriggerButton
         variant="secondary"
         icon={<ListIcon />}
-        aria-label="toggle menu"
+        aria-label="Toggle menu"
       />
       <Menu.List>
         <Menu.Item icon={<CheckIcon />}>Item 1</Menu.Item>

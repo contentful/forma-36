@@ -8,7 +8,7 @@ export default function BasicMenu() {
       <Menu.TriggerButton
         variant="secondary"
         icon={<ListIcon />}
-        aria-label="toggle menu"
+        aria-label="Toggle menu"
       />
       <Menu.List>
         <Menu.Item>Create an entry</Menu.Item>

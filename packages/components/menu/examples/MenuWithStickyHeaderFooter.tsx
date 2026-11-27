@@ -8,7 +8,7 @@ export default function MenuWithStickyHeaderFooter() {
       <Menu.TriggerButton
         variant="secondary"
         icon={<ListIcon />}
-        aria-label="toggle menu"
+        aria-label="Toggle menu"
       />
       <Menu.List style={{ maxHeight: '300px' }}>
         <Menu.ListHeader>

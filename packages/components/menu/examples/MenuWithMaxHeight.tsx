@@ -8,7 +8,7 @@ export default function MenuWithMaxHeight() {
       <Menu.TriggerButton
         variant="secondary"
         icon={<ListIcon />}
-        aria-label="toggle menu"
+        aria-label="Toggle menu"
       />
       <Menu.List style={{ maxHeight: '200px' }}>
         <Menu.Item>Item 1</Menu.Item>

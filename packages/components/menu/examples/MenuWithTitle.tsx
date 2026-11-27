@@ -8,7 +8,7 @@ export default function MenuWithTitle() {
       <Menu.TriggerButton
         variant="secondary"
         icon={<ListIcon />}
-        aria-label="toggle menu"
+        aria-label="Toggle menu"
       />
       <Menu.List>
         <Menu.SectionTitle>Entry</Menu.SectionTitle>

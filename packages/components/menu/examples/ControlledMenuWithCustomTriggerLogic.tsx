@@ -9,7 +9,7 @@ export default function ControlledMenuWithCustomTriggerLogic() {
       <Menu.TriggerButton
         variant="secondary"
         icon={<ListIcon />}
-        aria-label="toggle menu"
+        aria-label="Toggle menu"
         onClick={() => setIsOpen(!isOpen)}
       />
       <Menu.List>
