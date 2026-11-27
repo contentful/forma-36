@@ -222,6 +222,7 @@ export * from './vendor/phosphor/RocketLaunchIcon.js';
 export * from './vendor/phosphor/RowsIcon.js';
 export * from './vendor/phosphor/RowsPlusBottomIcon.js';
 export * from './vendor/phosphor/RulerIcon.js';
+export * from './vendor/phosphor/ScrollIcon.js';
 export * from './vendor/phosphor/SealIcon.js';
 export * from './vendor/phosphor/SelectionIcon.js';
 export * from './vendor/phosphor/ShoppingCartSimpleIcon.js';
