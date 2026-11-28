@@ -8,6 +8,12 @@ The Changelog gives an overview of the changes we've made to Forma 36
 
 <!-- CHANGELOG:INSERT -->
 
+## 28-11-2026
+
+**F36 Icons** `v6.34.0`
+
+- Add ScrollIcon from Phosphor
+
 ## 25-11-2026
 
 **F36 Codemod** `v7.1.0`
